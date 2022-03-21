@@ -1,0 +1,14 @@
+{
+  "name": "app/blog",
+  "authors": [
+    {
+      "name": "Naif sameer"
+    }
+  ],
+  "require": {},
+  "autoload": {
+    "psr-4": {
+      "app\\": "./"
+    }
+  }
+}
