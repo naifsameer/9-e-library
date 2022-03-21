@@ -1,6 +1,6 @@
 # hello everyone 😎
 
-## create the database and tables run this
+## create the database and tables run this (beta)
 
 ```bash
 npm run db
@@ -10,7 +10,7 @@ yarn db
 
 ```
 
-## insert fake data
+## insert fake data (beta)
 
 ```bash
 npm run fake-data
@@ -20,7 +20,7 @@ yarn fake-data
 
 ```
 
-## run the project
+## run the project (beta)
 
 ```bash
   npm run php
