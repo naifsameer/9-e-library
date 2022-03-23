@@ -16,7 +16,6 @@
 
         <a href="/" class="px-10 py-2 rounded text-lg font-semibold text-blue-800 bg-blue-100">Go home 😎</a>
       </div>
-
     </div>
   </div>
 </div>

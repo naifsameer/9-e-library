@@ -1,5 +1,5 @@
 <nav class="bg-white shadow dark:bg-gray-800">
-  <div class="container px-6 py-4 mx-auto md:flex md:justify-between md:items-center">
+  <div class="container px-6 py-4 mx-auto flex justify-between md:items-center">
     <div class="flex items-center justify-between">
       <div>
         <a class="text-lg font-bold text-gray-800 transition-colors duration-200 transform dark:text-white  hover:text-gray-700 dark:hover:text-gray-300" href="/">
@@ -8,11 +8,20 @@
       </div>
     </div>
 
-    <div class="items-center md:flex">
+    <div class="items-center flex gap-4">
       <div class="flex flex-col md:flex-row md:mx-6">
         <a class="my-1 text-sm font-medium text-gray-700 transition-colors duration-200 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-4 md:my-0" href="/">Home</a>
 
-        <!-- <a class="my-1 text-sm font-medium text-gray-700 transition-colors duration-200 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-4 md:my-0" href="/posts">Posts</a> -->
+
+        <?php
+
+        use app\helpers\SessionHelper;
+
+        if (SessionHelper::getSession(SessionHelper::$AUTH)) { ?>
+
+          <a class="my-1 text-sm font-medium text-gray-700 transition-colors duration-200 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-4 md:my-0" href="/logout">Logout</a>
+
+        <?php } ?>
 
 
       </div>
