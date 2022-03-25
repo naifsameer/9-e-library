@@ -3,7 +3,7 @@
 use app\controllers\AuthController;
 use app\controllers\DashboardController;
 use app\controllers\HomeController;
-use app\Router;
+use app\config\Router;
 
 
 require_once __DIR__ . '/../vendor/autoload.php';

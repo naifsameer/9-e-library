@@ -1,6 +1,6 @@
 <?php
 
-namespace app;
+namespace app\config;
 
 $dns = "mysql:host=localhost";
 $username = 'root';

@@ -8,7 +8,7 @@ SessionHelper::run_session();
 
 use app\helpers\UtilHelper;
 use app\models\Post;
-use app\Router;
+use app\config\Router;
 
 /**
  * Class Dashboard controller

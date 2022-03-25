@@ -3,7 +3,7 @@
 namespace app\controllers;
 
 use app\models\Post;
-use app\Router;
+use app\config\Router;
 
 /**
  * Class Post controller
@@ -19,6 +19,4 @@ class PostController
 
         $router->render('index', $data);
     }
-
-    
 }

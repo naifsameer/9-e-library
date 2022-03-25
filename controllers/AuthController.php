@@ -9,7 +9,7 @@ SessionHelper::run_session();
 use app\helpers\UtilHelper;
 use app\helpers\ValidateHelper;
 use app\models\Auth;
-use app\Router;
+use app\config\Router;
 
 /**
  * Auth controller

@@ -2,7 +2,7 @@
 
 namespace app\models;
 
-use app\Database;
+use app\config\Database;
 use app\helpers\UtilHelper;
 
 /**
@@ -41,5 +41,4 @@ class Post
             "posts.postsID", "categories.categoriesID"
         ])->getAll();
     }
-
 }

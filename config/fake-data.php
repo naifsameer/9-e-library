@@ -1,6 +1,6 @@
 <?php
 
-use app\Database;
+use app\config\Database;
 
 require __DIR__ . ('/../Database.php');
 

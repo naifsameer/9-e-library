@@ -3,7 +3,7 @@
 namespace app\controllers;
 
 use app\helpers\UtilHelper;
-use app\Router;
+use app\config\Router;
 
 /**
  * Class Post controller

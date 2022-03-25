@@ -1,7 +1,6 @@
 <?php
 
-namespace app;
-
+namespace app\config;
 
 /**
  *  Router
@@ -51,13 +50,13 @@ class Router
     public static function render(string $view, array $params = [])
     {
         // head section
-        include __DIR__ . "/views/includes/head.php";
+        include __DIR__ . "/../views/includes/head.php";
 
         // render the view 
-        include __DIR__ . "/views/$view.php";
+        include __DIR__ . "/../views/$view.php";
 
         // footer section
-        include __DIR__ . "/views/includes/footer.php";
+        include __DIR__ . "/../views/includes/footer.php";
     }
 
     public static function redirect(string $redirect_url)

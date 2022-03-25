@@ -6,7 +6,7 @@
   "scripts": {
     "db": "php config/setup.db.php",
     "fake-data": "php config/fake-data.php",
-    "php": "cd public && php -S localhost:8000",
+    "php": "php -S localhost:8000 -t public",
     "css": "tailwindcss -i public/css/input.css -o public/css/output.css --watch"
   },
   "keywords": [],

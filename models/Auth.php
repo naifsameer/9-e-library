@@ -6,7 +6,7 @@ use app\helpers\SessionHelper;
 
 SessionHelper::run_session();
 
-use app\Database;
+use app\config\Database;
 use app\helpers\UtilHelper;
 
 /**
