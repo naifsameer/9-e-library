@@ -3,10 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "main": "",
+  "type": "module",
   "scripts": {
-    "db": "php config/setup.db.php",
-    "fake-data": "php config/fake-data.php",
-    "php": "php -S localhost:8000 -t public",
     "css": "tailwindcss -i public/css/input.css -o public/css/output.css --watch"
   },
   "keywords": [],

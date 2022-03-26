@@ -1,3 +1,9 @@
 <?php include 'includes/nav.php';
 ?>
-Home page
+
+<div id="app">
+  {{ message }}
+
+  <v-button></v-button>
+
+</div>

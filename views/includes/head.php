@@ -14,8 +14,6 @@ if (!isset($_SESSION)) {
   <title>E library</title>
 
   <link href="/css/output.css" rel="stylesheet" />
-
-  <title>Products CRUD</title>
 </head>
 
 <body class="bg-gray-900 text-gray-100">
