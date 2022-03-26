@@ -11,7 +11,7 @@
   - product details
   - shopping cart
 - update
-  - home page
+  - home page ✅
 
 ## 1.1.0
 
