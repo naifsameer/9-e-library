@@ -5,169 +5,100 @@ include_once 'includes/slider.php';
 
 ?>
 
-<div class="c-checkout">
+
+<div class="c-stepper" dir="ltr">
   <div class="container">
-    <!-- checkout title -->
-    <h2 class="title">
-      <i class="fa fa-shopping-cart"></i>
-      السلة
-      <span>
-        (
-        <span class="checkout-product-number">4</span> منتجات )
-      </span>
-    </h2>
+    <div class="step-nav">
+      <div class="step__item is-active">1</div>
+      <div class="step__item">2</div>
+      <div class="step__item">3</div>
+      <div class="step__item">4</div>
+    </div>
 
-    <!-- checkout items -->
-    <div class="item-wrapper">
-      <!-- list items -->
-      <div class="list">
-        <!-- item 1 -->
-        <div class="item">
-          <div class="item-container">
-            <!-- right side -->
-            <div class="item-right">
-              <div class="img">
-                <img src="images//books/book-1.jpg" alt="book image" />
-              </div>
-              <div>
-                <h3 class="title">البدايات و النهايات الجزء الاول</h3>
-                <p class="docs">
-                  منتج قابل للخصم لحاملي بطاقة خصم مكتبة جرير
-                </p>
-                <p class="note">
-                  <b> :ملاحظه </b>
-                  هذا المنتج رقمي وسيتم توصيله من خلال البريد الالكتروني
-                  <a href="#"> كيفية الحصول على المنتج? </a>
-                </p>
-              </div>
-            </div>
-
-            <!-- left side -->
-            <div class="item-left">
-              <p class="price">
-                <span class="price-label">3.99</span>
-                ر.س
-              </p>
-
-              <div>
-                <select class="c-select">
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                </select>
-              </div>
-            </div>
-          </div>
-
-          <!-- footer -->
-          <div class="item-footer">
-            <hr />
-            <div>
-              <i class="fa fa-trash"></i>
-              احذف
-            </div>
-          </div>
+    <!-- first step -->
+    <div class="js-step is-active">
+      <!-- user information form -->
+      <form action="" class="user-information">
+        <div class="input-group">
+          <label for="usrer-name">Name</label>
+          <input type="text" id="user-name" />
         </div>
 
-        <!-- item 2 -->
-        <div class="item">
-          <div class="item-container">
-            <!-- right side -->
-            <div class="item-right">
-              <div class="img">
-                <img src="images//books/book-2.jpg" alt="book image" />
-              </div>
-              <div>
-                <h3 class="title">
-                  مبادىء الرياضيات وتطبيقاتها في العلوم الادارية والانسانية
-                </h3>
-                <p class="docs">
-                  منتج قابل للخصم لحاملي بطاقة خصم مكتبة جرير
-                </p>
-                <p class="note">
-                  <b> :ملاحظه </b>
-                  هذا المنتج رقمي وسيتم توصيله من خلال البريد الالكتروني
-                  <a href="#"> كيفية الحصول على المنتج? </a>
-                </p>
-              </div>
-            </div>
+        <div class="input-group">
+          <label for="usrer-email">Email</label>
+          <input type="email" id="user-email" />
+        </div>
 
-            <!-- left side -->
-            <div class="item-left">
-              <p>
-                <span class="price-label">3.99</span>
-                ر.س
-              </p>
+        <div class="input-group">
+          <label for="usrer-address">Address</label>
+          <input type="text" id="user-address" />
+        </div>
 
-              <div>
-                <select class="c-select">
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                </select>
-              </div>
-            </div>
-          </div>
+        <div class="input-group">
+          <label for="usrer-age">Age</label>
+          <input type="text" id="user-age" />
+        </div>
 
-          <!-- footer -->
-          <div class="item-footer">
-            <hr />
-            <div>
-              <i class="fa fa-trash"></i>
-              احذف
-            </div>
-          </div>
+        <div class="btn-group">
+          <button type="button" class="btn next-btn">Next</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- second step -->
+    <div class="js-step">
+      <!-- payment information form -->
+      <form action="" class="payment-information">
+        <div class="input-group">
+          <label for="payment-number">Card number</label>
+          <input type="text" id="payment-number" />
+        </div>
+
+        <div class="input-group">
+          <label for="payment-date">Card date</label>
+          <input type="date" id="payment-date" />
+        </div>
+
+        <div class="input-group">
+          <label for="payment-number">Address</label>
+          <input type="text" id="payment-number" />
+        </div>
+
+        <div class="btn-group">
+          <button type="button" class="btn previews-btn">Previews</button>
+
+          <button type="button" class="btn next-btn">Next</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- third step -->
+    <div class="js-step">
+      <div class="confirm">
+        <h3 class="confirm__title">please confirm the payment</h3>
+
+        <!-- <button class="confirm-btn">Confirm</button> -->
+
+        <div class="btn-group">
+          <button type="button" class="btn previews-btn">Previews</button>
+
+          <button type="button" class="btn next-btn">Confirm</button>
         </div>
       </div>
+    </div>
 
-      <!-- price -->
-      <div class="summary">
-        <div class="summary-row">
-          <div class="summary-title">المجموع</div>
+    <!-- forth step -->
+    <div class="js-step">
+      <div class="done-checkout">
+        <h2 class="title">
+          Wow man you do it. No you can spent the rest of your live with a
+          big smile.
 
-          <div class="price">
-            <span class="price-label"> 143.75 </span>
-            ر.س.
-          </div>
-        </div>
-
-        <div class="summary-row">
-          <div class="summary-title">تكاليف الشحن</div>
-
-          <div class="price">
-            <span class="price-label"> 13.75 </span>
-            ر.س.
-          </div>
-        </div>
-
-        <div class="summary-row">
-          <div class="summary-title total">
-            المجموع الكلي
-            <span> شامل الضريبة </span>
-          </div>
-
-          <div class="price">
-            <span class="price-label"> 200.75 </span>
-            ر.س.
-          </div>
-        </div>
-
-        <div class="summary-footer">
-          <p class="summary-desc">
-            بالضغط على '' انهاء التسوق '' فانت توافق على على الشروط والأحكام
-            و سياسة الخصوصية
-          </p>
-
-          <a href="payment" class="summary-btn btn">تحديث السله</a>
-        </div>
+          <a class="stepper-home-link" href="/"> Home page </a>
+        </h2>
       </div>
     </div>
   </div>
 </div>
-<script src="js/checkout.js"></script>
 
-<script>
-  // get the value from the local storage
-  document.querySelector('.shopping-item-number').innerHTML =
-    localStorage.getItem('checkout-product-nubmer');
-</script>
+<script src="js/stepper.js"></script>
