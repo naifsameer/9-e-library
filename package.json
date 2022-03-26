@@ -1,6 +1,6 @@
 {
   "name": "query-builder",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "",
   "type": "module",
@@ -9,5 +9,9 @@
   },
   "keywords": [],
   "author": "Naif Sameer",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "eslint": "^8.12.0",
+    "eslint-plugin-vue": "^8.5.0"
+  }
 }

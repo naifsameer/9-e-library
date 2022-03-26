@@ -8,10 +8,10 @@ use app\config\Router;
 /**
  * @package app\controllers
  */
-class HomeController
+class CategoryController
 {
-    public static function index()
-    {
-        Router::render('index');
-    }
+  public static function index()
+  {
+    Router::render('categories');
+  }
 }
