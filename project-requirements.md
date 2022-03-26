@@ -3,15 +3,19 @@
 ## 1.2.0
 
 - add vuejs ✅
-- add following library page
-  - about
-  - category ✅
-  - checkout
-  - contact
-  - product details ✅
-  - shopping cart `working....`
-- update
-  - home page ✅
+
+add following library page
+
+- about
+- category ✅
+- checkout `working....`
+- contact
+- product details ✅
+- shopping cart ✅
+
+update
+
+- home page ✅
 
 ## 1.1.0
 

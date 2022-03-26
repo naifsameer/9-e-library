@@ -76,7 +76,7 @@
         </button>
       </form>
 
-      <a href="/checkout">
+      <a href="/shopping-cart">
         <button class="shopping-btn">
           <i class="fa fa-shopping-cart"></i>
 

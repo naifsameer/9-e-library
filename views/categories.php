@@ -90,7 +90,7 @@ include_once 'includes/slider.php';
                   <i class="fa fa-star"></i>
                 </div>
 
-                <h4 class="item-title">نظرية الضفادع تحت المجهر</h4>
+                <h4 class="item-title">ألرياضيات</h4>
 
                 <div class="c-price" dir="rtl">
                   <span class="price-label"> 120 </span>
