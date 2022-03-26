@@ -5,10 +5,10 @@
 - add vuejs ✅
 - add following library page
   - about
-  - category
+  - category ✅
   - checkout
   - contact
-  - product details
+  - product details `working....`
   - shopping cart
 - update
   - home page ✅
