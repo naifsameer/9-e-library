@@ -8,10 +8,10 @@ use app\config\Router;
 /**
  * @package app\controllers
  */
-class ShoppingCartController
+class CheckoutController
 {
   public static function index()
   {
-    Router::render('shopping-cart');
+    Router::render('checkout');
   }
 }
