@@ -8,8 +8,8 @@
   - category ✅
   - checkout
   - contact
-  - product details `working....`
-  - shopping cart
+  - product details ✅
+  - shopping cart `working....`
 - update
   - home page ✅
 

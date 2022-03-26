@@ -5,12 +5,15 @@ use app\controllers\DashboardController;
 use app\controllers\HomeController;
 use app\config\Router;
 use app\controllers\CategoryController;
+use app\controllers\ProductDetailsController;
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
 Router::get('/', [HomeController::class, 'index']);
 
 Router::get('/categories', [CategoryController::class, 'index']);
+
+Router::get('/details', [ProductDetailsController::class, 'index']);
 
 // Auth router
 Router::get('/login', [AuthController::class, 'login']);
