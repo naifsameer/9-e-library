@@ -1,5 +1,9 @@
 # Project requirements
 
+## 1.1.0
+
+- add getURL method inside Router.php ✅
+
 ## 1.0.1
 
 `MVC NO.2`

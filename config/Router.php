@@ -21,16 +21,23 @@ class Router
         self::$postRoutes[$url] = $fn;
     }
 
-    public static function resolve()
+    public static function getURL()
     {
-        $method = strtolower($_SERVER['REQUEST_METHOD']);
-
         $url = $_SERVER['REQUEST_URI'];
 
         // strip GET variables from URL
         if (($pos = strpos($url, '?')) !== false) {
             $url = substr($url, 0, $pos);
         }
+
+        return $url;
+    }
+
+    public static function resolve()
+    {
+        $method = strtolower($_SERVER['REQUEST_METHOD']);
+
+        $url = self::getURL();
 
         if ($method === 'get') {
             $fn = self::$getRoutes[$url] ?? null;
