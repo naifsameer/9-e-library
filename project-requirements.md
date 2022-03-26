@@ -8,7 +8,7 @@ add following library page
 
 - about
 - category ✅
-- checkout `working....`
+- checkout ✅
 - contact
 - product details ✅
 - shopping cart ✅
