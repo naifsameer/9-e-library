@@ -10,5 +10,13 @@
     "psr-4": {
       "app\\": "./"
     }
+  },
+  "scripts": {
+    "serve": "php -S localhost:8000 -t public",
+    "fake-data": "php config/fake-data.php",
+    "create-db": "php config/setup.db.php"
+  },
+  "config": {
+    "process-timeout": 0
   }
 }
