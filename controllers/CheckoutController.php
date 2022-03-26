@@ -8,10 +8,10 @@ use app\config\Router;
 /**
  * @package app\controllers
  */
-class HomeController
+class CheckoutController
 {
-    public static function index()
-    {
-        Router::render('index');
-    }
+  public static function index()
+  {
+    Router::render('checkout');
+  }
 }
