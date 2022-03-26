@@ -6,10 +6,8 @@
 
 add following library page
 
-- about
 - category ✅
 - checkout ✅
-- contact
 - product details ✅
 - shopping cart ✅
 
