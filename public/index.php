@@ -30,8 +30,9 @@ Router::get('/logout', [AuthController::class, 'logout']);
 // dashboard router
 Router::get('/dashboard', [DashboardController::class, 'index']);
 
+Router::post('/dashboard/add', [DashboardController::class, 'add']);
+
 Router::get('/dashboard/show', [DashboardController::class, 'checkout']);
 
-Router::post('/dashboard/add', [DashboardController::class, 'add']);
 
 Router::resolve();
