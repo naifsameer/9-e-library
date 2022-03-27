@@ -65,7 +65,7 @@
     <nav class="c-nav">
       <!-- logo -->
       <a href="/" class="logo">
-        <img src="images/icons/logo.svg" alt="" />
+        <img src="/images/icons/logo.svg" alt="" />
       </a>
 
       <form autocomplete="off" action="" class="form autocomplete">

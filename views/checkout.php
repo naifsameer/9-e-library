@@ -101,4 +101,4 @@ include_once 'includes/slider.php';
   </div>
 </div>
 
-<script src="js/stepper.js"></script>
+<script src="/js/stepper.js"></script>

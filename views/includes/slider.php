@@ -3,22 +3,22 @@
   <div class="container">
     <div class="list">
       <div class="item">
-        <img src="images/slider/slider-1.jpg" alt="slider image" />
+        <img src="/images/slider/slider-1.jpg" alt="slider image" />
       </div>
       <div class="item">
-        <img src="images/slider/slider-2.webp" alt="slider image" />
+        <img src="/images/slider/slider-2.webp" alt="slider image" />
       </div>
       <div class="item">
-        <img src="images/slider/slider-3.jpg" alt="slider image" />
+        <img src="/images/slider/slider-3.jpg" alt="slider image" />
       </div>
       <div class="item">
-        <img src="images/slider/slider-1.jpg" alt="slider image" />
+        <img src="/images/slider/slider-1.jpg" alt="slider image" />
       </div>
       <div class="item">
-        <img src="images/slider/slider-2.webp" alt="slider image" />
+        <img src="/images/slider/slider-2.webp" alt="slider image" />
       </div>
       <div class="item">
-        <img src="images/slider/slider-3.jpg" alt="slider image" />
+        <img src="/images/slider/slider-3.jpg" alt="slider image" />
       </div>
 
       <div class="c-slider-btn">
@@ -38,7 +38,7 @@
   </div>
 </section>
 
-<script src="js/slider.js"></script>
+<script src="/js/slider.js"></script>
 
 <script>
   slider({
