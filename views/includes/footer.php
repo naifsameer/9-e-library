@@ -27,37 +27,37 @@
             <ul class="c-social__list">
               <li class="c-social__item">
                 <a href="">
-                  <img src="images/icons/facebook.svg" alt="social icon" />
+                  <img src="/images/icons/facebook.svg" alt="social icon" />
                 </a>
               </li>
               <li class="c-social__item">
                 <a href="">
-                  <img src="images/icons/google-plus.svg" alt="social icon" />
+                  <img src="/images/icons/google-plus.svg" alt="social icon" />
                 </a>
               </li>
               <li class="c-social__item">
                 <a href="">
-                  <img src="images/icons/linkedin.svg" alt="social icon" />
+                  <img src="/images/icons/linkedin.svg" alt="social icon" />
                 </a>
               </li>
               <li class="c-social__item">
                 <a href="">
-                  <img src="images/icons/snapchat.svg" alt="social icon" />
+                  <img src="/images/icons/snapchat.svg" alt="social icon" />
                 </a>
               </li>
               <li class="c-social__item">
                 <a href="">
-                  <img src="images/icons/youtube.svg" alt="social icon" />
+                  <img src="/images/icons/youtube.svg" alt="social icon" />
                 </a>
               </li>
               <li class="c-social__item">
                 <a href="">
-                  <img src="images/icons/tiktok.svg" alt="social icon" />
+                  <img src="/images/icons/tiktok.svg" alt="social icon" />
                 </a>
               </li>
               <li class="c-social__item">
                 <a href="">
-                  <img src="images/icons/twitter.svg" alt="social icon" />
+                  <img src="/images/icons/twitter.svg" alt="social icon" />
                 </a>
               </li>
             </ul>
@@ -188,58 +188,72 @@
       </div>
 
       <div class="c-copyright__payments">
-        <img src="images/payments/visa-grey.svg" alt="payment icon" />
-        <img src="images/payments/amex.svg" alt="payment icon" />
-        <img src="images/payments/mada.svg" alt="payment icon" />
-        <img src="images/payments/master.svg" alt="payment icon" />
-        <img src="images/payments/qitaf.svg" alt="payment icon" />
-        <img src="images/payments/pay-at-showroom.svg" alt="payment icon" />
+        <img src="/images/payments/visa-grey.svg" alt="payment icon" />
+        <img src="/images/payments/amex.svg" alt="payment icon" />
+        <img src="/images/payments/mada.svg" alt="payment icon" />
+        <img src="/images/payments/master.svg" alt="payment icon" />
+        <img src="/images/payments/qitaf.svg" alt="payment icon" />
+        <img src="/images/payments/pay-at-showroom.svg" alt="payment icon" />
       </div>
     </div>
   </div>
 </footer>
 
-<script src="js/modal.js"></script>
+<script src="/js/modal.js"></script>
 
 
 <script>
   // change page mode when the language change
   const langBtn = document.querySelector('.lang-btn');
 
-  langBtn.onclick = () => {
-    const lang = langBtn.getAttribute('data-lang');
-    if (lang === 'en') {
-      langBtn.setAttribute('data-lang', 'ar');
-      document.querySelector('html').dir = 'rtl';
-      document.querySelector('html').lang = 'ar';
-    } else if (lang === 'ar') {
-      langBtn.setAttribute('data-lang', 'en');
-      document.querySelector('html').dir = 'ltr';
-      document.querySelector('html').lang = 'en';
-    }
-  };
+  if (langBtn) {
 
-  // get the value from the local storage
-  document.querySelector('.shopping-item-number').innerHTML =
-    localStorage.getItem('checkout-product-nubmer');
+    langBtn.onclick = () => {
+      const lang = langBtn.getAttribute('data-lang');
+      if (lang === 'en') {
+        langBtn.setAttribute('data-lang', 'ar');
+        document.querySelector('html').dir = 'rtl';
+        document.querySelector('html').lang = 'ar';
+      } else if (lang === 'ar') {
+        langBtn.setAttribute('data-lang', 'en');
+        document.querySelector('html').dir = 'ltr';
+        document.querySelector('html').lang = 'en';
+      }
+    };
+  }
 
-  // when click on the img or title of the book go to details page
-  document.querySelectorAll('.c-books .item-img').forEach((item) => {
-    item.style.cursor = 'pointer';
-    item.addEventListener('click', () => {
-      window.location.assign('/details');
+
+  try {
+    // get the value from the local storage
+    document.querySelector('.shopping-item-number').innerHTML =
+      localStorage.getItem('checkout-product-nubmer');
+  } catch (error) {
+    console.log(error);
+  }
+
+  try {
+    // when click on the img or title of the book go to details page
+    document.querySelectorAll('.c-books .item-img').forEach((item) => {
+      item.style.cursor = 'pointer';
+      item.addEventListener('click', () => {
+        window.location.assign('/details');
+      });
     });
-  });
 
-  document.querySelectorAll('.c-books .item-label').forEach((item) => {
-    item.style.cursor = 'pointer';
-    item.addEventListener('click', () => {
-      window.location.assign('/details');
+    document.querySelectorAll('.c-books .item-label').forEach((item) => {
+      item.style.cursor = 'pointer';
+      item.addEventListener('click', () => {
+        window.location.assign('/details');
+      });
     });
-  });
+  } catch (error) {
+    console.log(error);
+  }
 </script>
 
-<script src="js/autocomplete.js"></script>
+<script src="/js/autocomplete.js"></script>
+<script src="/js/axios.min.js"></script>
+<script src="/js/axios.min.js"></script>
 <script type="module" src="/js/index.js"></script>
 </body>
 

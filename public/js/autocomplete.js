@@ -111,4 +111,8 @@ const productItems = [
   'card 4',
 ];
 
-autocomplete(document.getElementById('myInput'), productItems);
+try {
+  autocomplete(document.getElementById('myInput'), productItems);
+} catch (err) {
+  console.log(err);
+}
