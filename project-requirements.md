@@ -1,5 +1,18 @@
 # Project requirements
 
+## 1.3.0
+
+- category with CRUD operations.
+- books with CRUD operations.
+- authors with CRUD operations.
+- publishers with CRUD operations.
+- users with CRUD operations.
+- cities with CRUD operations.
+- offers with CRUD operations.
+- orders with CRUD operations.
+- user payment with CRUD operations.
+- user addresses with CRUD operations.
+
 ## 1.2.0
 
 - add vuejs ✅
