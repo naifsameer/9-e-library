@@ -145,3 +145,9 @@ include_once 'includes/slider.php';
   document.querySelector('.shopping-item-number').innerHTML =
     localStorage.getItem('checkout-product-nubmer');
 </script>
+
+
+<?php include_once 'includes/footer.php'; ?>
+</body>
+
+</html>

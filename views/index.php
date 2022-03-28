@@ -743,3 +743,8 @@ include_once 'includes/slider.php';
     }
   });
 </script>
+
+<?php include_once 'includes/footer.php'; ?>
+</body>
+
+</html>
