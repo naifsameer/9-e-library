@@ -5,7 +5,7 @@ if (!isset($_SESSION)) {
 }
 ?>
 <!doctype html>
-<html lang="ar" dir="rtl">
+<html>
 
 <head>
   <!-- Required meta tags -->
