@@ -50,6 +50,7 @@
       VIconSignup,
       VIconProduct,
       VIconUser,
+      VIconCategories,
       VIconDashboard,
       VModal
     },
