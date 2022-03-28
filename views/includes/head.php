@@ -5,16 +5,16 @@ if (!isset($_SESSION)) {
 }
 ?>
 <!doctype html>
-<html lang="ar" dir="rtl">
+<html>
 
 <head>
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>E library</title>
-  <link rel="stylesheet" href="css/solid.min.css" />
-  <link rel="stylesheet" href="css/fontawesome.min.css" />
-  <link rel="stylesheet" href="css/index.css" />
+  <link rel="stylesheet" href="/css/solid.min.css" />
+  <link rel="stylesheet" href="/css/fontawesome.min.css" />
+  <link rel="stylesheet" href="/css/index.css" />
   <link href="/css/output.css" rel="stylesheet" />
 </head>
 

@@ -29,5 +29,6 @@ Router::get('/logout', [AuthController::class, 'logout']);
 
 // dashboard router
 Router::get('/dashboard', [DashboardController::class, 'index']);
+Router::post('/upload_file', [DashboardController::class, 'upload']);
 
 Router::resolve();

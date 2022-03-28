@@ -1,9 +1,7 @@
-import { createApp, defineComponent } from './vue.dev.js';
-
 // html function to enable vscode lit code highlight
 const html = (arg) => arg.join('');
 
-let VButton = defineComponent({
+let VButton = Vue.defineComponent({
   template: html`
     <h2>
       Naif {{user}}
@@ -16,12 +14,3 @@ let VButton = defineComponent({
     };
   },
 });
-
-createApp({
-  components: { VButton },
-  data() {
-    return {
-      message: 'Hello Vue!',
-    };
-  },
-}).mount('#app');

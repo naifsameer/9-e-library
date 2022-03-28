@@ -27,7 +27,7 @@ include_once 'includes/slider.php';
             <!-- right side -->
             <div class="item-right">
               <div class="img">
-                <img src="images//books/book-1.jpg" alt="book image" />
+                <img src="/images//books/book-1.jpg" alt="book image" />
               </div>
               <div>
                 <h3 class="title">البدايات و النهايات الجزء الاول</h3>
@@ -75,7 +75,7 @@ include_once 'includes/slider.php';
             <!-- right side -->
             <div class="item-right">
               <div class="img">
-                <img src="images//books/book-2.jpg" alt="book image" />
+                <img src="/images//books/book-2.jpg" alt="book image" />
               </div>
               <div>
                 <h3 class="title">
@@ -164,10 +164,15 @@ include_once 'includes/slider.php';
     </div>
   </div>
 </div>
-<script src="js/checkout.js"></script>
+<script src="/js/checkout.js"></script>
 
 <script>
   // get the value from the local storage
   document.querySelector('.shopping-item-number').innerHTML =
     localStorage.getItem('checkout-product-nubmer');
 </script>
+
+<?php include_once 'includes/footer.php'; ?>
+</body>
+
+</html>

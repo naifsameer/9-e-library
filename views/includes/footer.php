@@ -27,37 +27,37 @@
             <ul class="c-social__list">
               <li class="c-social__item">
                 <a href="">
-                  <img src="images/icons/facebook.svg" alt="social icon" />
+                  <img src="/images/icons/facebook.svg" alt="social icon" />
                 </a>
               </li>
               <li class="c-social__item">
                 <a href="">
-                  <img src="images/icons/google-plus.svg" alt="social icon" />
+                  <img src="/images/icons/google-plus.svg" alt="social icon" />
                 </a>
               </li>
               <li class="c-social__item">
                 <a href="">
-                  <img src="images/icons/linkedin.svg" alt="social icon" />
+                  <img src="/images/icons/linkedin.svg" alt="social icon" />
                 </a>
               </li>
               <li class="c-social__item">
                 <a href="">
-                  <img src="images/icons/snapchat.svg" alt="social icon" />
+                  <img src="/images/icons/snapchat.svg" alt="social icon" />
                 </a>
               </li>
               <li class="c-social__item">
                 <a href="">
-                  <img src="images/icons/youtube.svg" alt="social icon" />
+                  <img src="/images/icons/youtube.svg" alt="social icon" />
                 </a>
               </li>
               <li class="c-social__item">
                 <a href="">
-                  <img src="images/icons/tiktok.svg" alt="social icon" />
+                  <img src="/images/icons/tiktok.svg" alt="social icon" />
                 </a>
               </li>
               <li class="c-social__item">
                 <a href="">
-                  <img src="images/icons/twitter.svg" alt="social icon" />
+                  <img src="/images/icons/twitter.svg" alt="social icon" />
                 </a>
               </li>
             </ul>
@@ -188,18 +188,18 @@
       </div>
 
       <div class="c-copyright__payments">
-        <img src="images/payments/visa-grey.svg" alt="payment icon" />
-        <img src="images/payments/amex.svg" alt="payment icon" />
-        <img src="images/payments/mada.svg" alt="payment icon" />
-        <img src="images/payments/master.svg" alt="payment icon" />
-        <img src="images/payments/qitaf.svg" alt="payment icon" />
-        <img src="images/payments/pay-at-showroom.svg" alt="payment icon" />
+        <img src="/images/payments/visa-grey.svg" alt="payment icon" />
+        <img src="/images/payments/amex.svg" alt="payment icon" />
+        <img src="/images/payments/mada.svg" alt="payment icon" />
+        <img src="/images/payments/master.svg" alt="payment icon" />
+        <img src="/images/payments/qitaf.svg" alt="payment icon" />
+        <img src="/images/payments/pay-at-showroom.svg" alt="payment icon" />
       </div>
     </div>
   </div>
 </footer>
 
-<script src="js/modal.js"></script>
+<script src="/js/modal.js"></script>
 
 
 <script>
@@ -239,8 +239,5 @@
   });
 </script>
 
-<script src="js/autocomplete.js"></script>
+<script src="/js/autocomplete.js"></script>
 <script type="module" src="/js/index.js"></script>
-</body>
-
-</html>

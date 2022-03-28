@@ -7,21 +7,30 @@ use app\helpers\SessionHelper;
 SessionHelper::run_session();
 
 use app\helpers\UtilHelper;
-use app\models\Post;
 use app\config\Router;
 
 /**
- * Class Dashboard controller
  * @package app\controllers
  */
 class DashboardController
 {
   public static function index()
   {
+    // only for debugging todo remove it later
+    SessionHelper::setSession(SessionHelper::$AUTH, true);
+
     if (SessionHelper::getSession(SessionHelper::$AUTH)) {
-      Router::render('dashboard');
+      Router::render('dashboard/index');
     } else {
       Router::redirect("/login");
     }
+  }
+
+  public static function upload()
+  {
+    // only for debugging todo remove it later
+    print_r(json_encode([$_POST, $_FILES]));
+
+    UtilHelper::uploadImage($_FILES['image']);
   }
 }

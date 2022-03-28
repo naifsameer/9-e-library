@@ -61,9 +61,6 @@ class Router
 
         // render the view 
         include __DIR__ . "/../views/$view.php";
-
-        // footer section
-        include __DIR__ . "/../views/includes/footer.php";
     }
 
     public static function redirect(string $redirect_url)

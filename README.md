@@ -3,27 +3,19 @@
 ## commands to create the database and tables run this
 
 ```bash
-npm run db
-
-#or
-yarn db
-
+composer create-db
 ```
 
 ## insert fake data
 
 ```bash
-npm run fake-data
-
-or
-yarn fake-data
-
+composer fake-data
 ```
 
 ## run the project
 
 ```bash
-  npm run php
+composer serve
 ```
 
 ## Project role follow it bro :)

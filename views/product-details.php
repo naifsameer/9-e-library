@@ -30,12 +30,12 @@ include_once 'includes/slider.php';
     <div class="c-details-wrapper">
       <!-- img wrapper -->
       <div class="c-img-wrapper">
-        <img src="images/books/book-1.jpg" class="book-img" alt="book img" />
+        <img src="/images/books/book-1.jpg" class="book-img" alt="book img" />
 
         <div class="other-imgs">
-          <img src="images/books/book-3.jpg" alt="book img" />
-          <img src="images/books/book-2.jpg" alt="book img" />
-          <img src="images/books/book-1.jpg" alt="book img" />
+          <img src="/images/books/book-3.jpg" alt="book img" />
+          <img src="/images/books/book-2.jpg" alt="book img" />
+          <img src="/images/books/book-1.jpg" alt="book img" />
         </div>
       </div>
 
@@ -324,7 +324,7 @@ include_once 'includes/slider.php';
     <div class="slider-wrapper">
       <div class="slider">
         <div class="slider-item">
-          <img class="slider-item-img" src="images/books/book-1.jpg" alt="book image" />
+          <img class="slider-item-img" src="/images/books/book-1.jpg" alt="book image" />
 
           <h3 class="slider-item-title">فن الثقه بالنفس</h3>
 
@@ -335,7 +335,7 @@ include_once 'includes/slider.php';
           </div>
         </div>
         <div class="slider-item">
-          <img class="slider-item-img" src="images/books/book-1.jpg" alt="book image" />
+          <img class="slider-item-img" src="/images/books/book-1.jpg" alt="book image" />
 
           <h3 class="slider-item-title">فن الثقه بالنفس</h3>
 
@@ -346,7 +346,7 @@ include_once 'includes/slider.php';
           </div>
         </div>
         <div class="slider-item">
-          <img class="slider-item-img" src="images/books/book-1.jpg" alt="book image" />
+          <img class="slider-item-img" src="/images/books/book-1.jpg" alt="book image" />
 
           <h3 class="slider-item-title">فن الثقه بالنفس</h3>
 
@@ -357,7 +357,7 @@ include_once 'includes/slider.php';
           </div>
         </div>
         <div class="slider-item">
-          <img class="slider-item-img" src="images/books/book-1.jpg" alt="book image" />
+          <img class="slider-item-img" src="/images/books/book-1.jpg" alt="book image" />
 
           <h3 class="slider-item-title">فن الثقه بالنفس</h3>
 
@@ -368,7 +368,7 @@ include_once 'includes/slider.php';
           </div>
         </div>
         <div class="slider-item">
-          <img class="slider-item-img" src="images/books/book-1.jpg" alt="book image" />
+          <img class="slider-item-img" src="/images/books/book-1.jpg" alt="book image" />
 
           <h3 class="slider-item-title">فن الثقه بالنفس</h3>
 
@@ -379,7 +379,7 @@ include_once 'includes/slider.php';
           </div>
         </div>
         <div class="slider-item">
-          <img class="slider-item-img" src="images/books/book-1.jpg" alt="book image" />
+          <img class="slider-item-img" src="/images/books/book-1.jpg" alt="book image" />
 
           <h3 class="slider-item-title">فن الثقه بالنفس</h3>
 
@@ -390,7 +390,7 @@ include_once 'includes/slider.php';
           </div>
         </div>
         <div class="slider-item">
-          <img class="slider-item-img" src="images/books/book-1.jpg" alt="book image" />
+          <img class="slider-item-img" src="/images/books/book-1.jpg" alt="book image" />
 
           <h3 class="slider-item-title">فن الثقه بالنفس</h3>
 
@@ -445,3 +445,8 @@ include_once 'includes/slider.php';
       };
     });
 </script>
+
+<?php include_once 'includes/footer.php'; ?>
+</body>
+
+</html>

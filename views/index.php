@@ -85,7 +85,7 @@ include_once 'includes/slider.php';
           <!-- item 1 -->
           <div class="item">
             <div class="item-img">
-              <img src="images/books/book-3.jpg" alt="book image" />
+              <img src="/images/books/book-3.jpg" alt="book image" />
             </div>
 
             <div class="item-content">
@@ -137,7 +137,7 @@ include_once 'includes/slider.php';
           <!-- item 2 -->
           <div class="item">
             <div class="item-img">
-              <img src="images/books/book-3.jpg" alt="book image" />
+              <img src="/images/books/book-3.jpg" alt="book image" />
             </div>
 
             <div class="item-content">
@@ -189,7 +189,7 @@ include_once 'includes/slider.php';
           <!-- item 3 -->
           <div class="item">
             <div class="item-img">
-              <img src="images/books/book-3.jpg" alt="book image" />
+              <img src="/images/books/book-3.jpg" alt="book image" />
             </div>
 
             <div class="item-content">
@@ -241,7 +241,7 @@ include_once 'includes/slider.php';
           <!-- item 4 -->
           <div class="item">
             <div class="item-img">
-              <img src="images/books/book-3.jpg" alt="book image" />
+              <img src="/images/books/book-3.jpg" alt="book image" />
             </div>
 
             <div class="item-content">
@@ -306,7 +306,7 @@ include_once 'includes/slider.php';
 
           <div class="item">
             <div class="item-img">
-              <img src="images/books/book-3.jpg" alt="book image" />
+              <img src="/images/books/book-3.jpg" alt="book image" />
             </div>
 
             <div class="item-content">
@@ -357,7 +357,7 @@ include_once 'includes/slider.php';
 
           <div class="item">
             <div class="item-img">
-              <img src="images/books/book-3.jpg" alt="book image" />
+              <img src="/images/books/book-3.jpg" alt="book image" />
             </div>
 
             <div class="item-content">
@@ -408,7 +408,7 @@ include_once 'includes/slider.php';
 
           <div class="item">
             <div class="item-img">
-              <img src="images/books/book-3.jpg" alt="book image" />
+              <img src="/images/books/book-3.jpg" alt="book image" />
             </div>
 
             <div class="item-content">
@@ -459,7 +459,7 @@ include_once 'includes/slider.php';
 
           <div class="item">
             <div class="item-img">
-              <img src="images/books/book-3.jpg" alt="book image" />
+              <img src="/images/books/book-3.jpg" alt="book image" />
             </div>
 
             <div class="item-content">
@@ -521,7 +521,7 @@ include_once 'includes/slider.php';
           <!-- item 1 -->
           <div class="item">
             <div class="item-img">
-              <img src="images/books/book-3.jpg" alt="book image" />
+              <img src="/images/books/book-3.jpg" alt="book image" />
             </div>
 
             <div class="item-content">
@@ -571,7 +571,7 @@ include_once 'includes/slider.php';
           <!-- item 1 -->
           <div class="item">
             <div class="item-img">
-              <img src="images/books/book-3.jpg" alt="book image" />
+              <img src="/images/books/book-3.jpg" alt="book image" />
             </div>
 
             <div class="item-content">
@@ -621,7 +621,7 @@ include_once 'includes/slider.php';
           <!-- item 1 -->
           <div class="item">
             <div class="item-img">
-              <img src="images/books/book-3.jpg" alt="book image" />
+              <img src="/images/books/book-3.jpg" alt="book image" />
             </div>
 
             <div class="item-content">
@@ -671,7 +671,7 @@ include_once 'includes/slider.php';
           <!-- item 1 -->
           <div class="item">
             <div class="item-img">
-              <img src="images/books/book-3.jpg" alt="book image" />
+              <img src="/images/books/book-3.jpg" alt="book image" />
             </div>
 
             <div class="item-content">
@@ -743,3 +743,8 @@ include_once 'includes/slider.php';
     }
   });
 </script>
+
+<?php include_once 'includes/footer.php'; ?>
+</body>
+
+</html>
