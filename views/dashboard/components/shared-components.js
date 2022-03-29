@@ -35,15 +35,97 @@ let VTableImage = Vue.defineComponent({
   props: ['src'],
 });
 
+/** Select
+ * @param {string} label input label
+ * @param {string} name input name
+ * @param {array} options
+ */
+let VSelect = Vue.defineComponent({
+  template: html`
+    <div>
+      <label
+        :for="'input-id' + generateRandomID"
+        class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+        >{{label}}</label
+      >
+      <select
+        :name="name"
+        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+      >
+        <option disabled selected>{{label}}</option>
+
+        <template v-for="option in options" :key="generateRandomID()">
+          <option
+            :value="key"
+            v-for="(key, value) in option"
+            :key="generateRandomID()"
+          >
+            {{value}}
+          </option>
+        </template>
+      </select>
+    </div>
+  `,
+  methods: {
+    generateRandomID: () => Math.round(Math.random() * 1e6),
+  },
+  props: {
+    options: { type: Array },
+    label: {
+      type: String,
+      required: true,
+    },
+    name: {
+      type: String,
+      required: true,
+    },
+  },
+});
+
+/** Select=
+ * @param {string} label input label
+ * @param {string} name input name
+ */
+let VTextarea = Vue.defineComponent({
+  template: html`
+    <div>
+      <label
+        :for="'input-id' + generateRandomID"
+        class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+        >{{label}}</label
+      >
+      <textarea
+        :name="name"
+        id="'input-id' + generateRandomID"
+        rows="4"
+        class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+        placeholder=""
+      ></textarea>
+    </div>
+  `,
+  methods: {
+    generateRandomID: () => Math.round(Math.random() * 1e6),
+  },
+  props: {
+    label: {
+      type: String,
+      required: true,
+    },
+    name: {
+      type: String,
+      required: true,
+    },
+  },
+});
+
 /** Input
  * @param {string} type input type
  * @param {string} label input label
  * @param {string} name input name
- * @param {string} value
  */
 let VInput = Vue.defineComponent({
   template: html`
-    <div class="mb-6">
+    <div>
       <label
         v-if="label !== ''"
         :for="'input-id' + generateRandomID"
@@ -54,8 +136,6 @@ let VInput = Vue.defineComponent({
         :name="name"
         :type="type"
         :id="'input-id' + generateRandomID"
-        :value="modelValue"
-        @input="$emit('update:modelValue', $event.target.value)"
         class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
         required
       />
@@ -64,9 +144,7 @@ let VInput = Vue.defineComponent({
   computed: {
     generateRandomID: () => Math.round(Math.random() * 1e6),
   },
-  emits: ['update:modelValue'],
   props: {
-    modelValue: {},
     type: {
       type: String,
       default: 'text',
@@ -89,7 +167,7 @@ let VInput = Vue.defineComponent({
  */
 let VInputFile = Vue.defineComponent({
   template: html`
-    <div class="mb-6">
+    <div>
       <label
         v-if="label !== ''"
         :for="'input-id' + generateRandomID"
@@ -97,9 +175,10 @@ let VInputFile = Vue.defineComponent({
         >{{label}}</label
       >
 
+      <!-- @change="onFileChange" -->
       <input
+        :name="name"
         type="file"
-        @change="onFileChange"
         :id="'input-id' + generateRandomID"
         class="py-2 px-4 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 "
         placeholder=""
@@ -111,7 +190,7 @@ let VInputFile = Vue.defineComponent({
     generateRandomID: () => Math.round(Math.random() * 1e6),
   },
   props: {
-    onFileChange: {},
+    // onFileChange: {},
     label: {
       type: String,
       default: '',

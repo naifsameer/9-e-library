@@ -1,17 +1,16 @@
 <div id="app">
-
   <div class="flex justify-between" :class="dark ? 'dark' : ''">
     <!-- dashboard nav -->
-    <aside id="sidebar" class="min-h-screen flex lg:flex flex-shrink-0 flex-col w-64 transition-width duration-75" aria-label="Sidebar">
+    <aside id="sidebar" class="w-1/5 items-stretch max-w-64 relative">
       <?php include 'components/sidebar.html'; ?>
     </aside>
 
-    <div class="flex-1 dark:bg-gray-800 dark:text-gray-300">
+    <div class="w-4/5 dark:bg-gray-800 dark:text-gray-300">
       <!-- dashboard header -->
       <?php include 'components/header.html'; ?>
 
       <!-- dashboard content-->
-      <div class="px-4 lg:px-8 py-6">
+      <div class="px-4 lg:px-8 py-6 ">
         <router-view></router-view>
       </div>
 
@@ -33,7 +32,11 @@
 
   // pages
   <?php include 'pages/categories.js' ?>
+
   <?php include 'pages/books.js' ?>
+  <?php include 'pages/add-book.js' ?>
+  <?php include 'pages/edit-book.js' ?>
+
   <?php include 'pages/authors.js' ?>
   <?php include 'pages/publishers.js' ?>
   <?php include 'pages/users.js' ?>
@@ -113,7 +116,17 @@
     {
       path: '/books',
       name: "Books",
-      component: VBooks
+      component: VBooks,
+    },
+    {
+      path: '/books/add',
+      name: "AddBook",
+      component: VAddBook
+    },
+    {
+      path: '/books/edit',
+      name: "EditBook",
+      component: VEditBook
     },
     {
       path: '/authors',

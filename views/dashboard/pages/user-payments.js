@@ -32,22 +32,6 @@ let VUserPayments = Vue.defineComponent({
       this.isDeleteModalOpen = false;
     },
 
-    onSubmit() {
-      this.formData.append('name', this.name);
-
-      axios
-        .post('/upload_file', this.formData, {
-          headers: {
-            'Content-Type': 'multipart/form-data',
-          },
-        })
-        .then((res) => {
-          this.name = '';
-          this.formData = new FormData();
-          this.closeAddModal();
-        });
-    },
-
     onFileChange(e) {
       let files = e.target.files || e.dataTransfer.files;
 
