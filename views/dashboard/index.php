@@ -38,6 +38,10 @@
   <?php include 'pages/edit-book.js' ?>
 
   <?php include 'pages/authors.js' ?>
+  <?php include 'pages/add-author.js' ?>
+  <?php include 'pages/edit-author.js' ?>
+
+
   <?php include 'pages/publishers.js' ?>
   <?php include 'pages/users.js' ?>
   <?php include 'pages/cities.js' ?>
@@ -133,6 +137,17 @@
       name: "Authors",
       component: VAuthors
     },
+    {
+      path: '/authors/add',
+      name: "AddAuthor",
+      component: VAddAuthor
+    },
+    {
+      path: '/authors/edit',
+      name: "EditAuthor",
+      component: VEditAuthor
+    },
+
     {
       path: '/publishers',
       name: "Publishers",
