@@ -2,10 +2,10 @@
 
 ## 1.3.0
 
-- category with CRUD operations.
+- category with CRUD operations. ✅
 - books with CRUD operations. ✅
-- authors with CRUD operations.
-- publishers with CRUD operations.
+- authors with CRUD operations.✅
+- publishers with CRUD operations. ✅
 - users with CRUD operations.
 - cities with CRUD operations.
 - offers with CRUD operations.

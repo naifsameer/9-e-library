@@ -43,6 +43,10 @@
 
 
   <?php include 'pages/publishers.js' ?>
+  <?php include 'pages/add-publisher.js' ?>
+  <?php include 'pages/edit-publisher.js' ?>
+
+
   <?php include 'pages/users.js' ?>
   <?php include 'pages/cities.js' ?>
   <?php include 'pages/offers.js' ?>
@@ -132,6 +136,7 @@
       name: "EditBook",
       component: VEditBook
     },
+
     {
       path: '/authors',
       name: "Authors",
@@ -153,6 +158,20 @@
       name: "Publishers",
       component: VPublishers
     },
+
+    {
+      path: '/publishers/add',
+      name: "AddPublisher",
+      component: VAddPublisher
+    },
+    {
+      path: '/publishers/edit',
+      name: "EdiPublisher",
+      component: VEditPublisher
+    },
+
+
+
     {
       path: '/users',
       name: "Users",
