@@ -3,7 +3,7 @@
 ## 1.3.0
 
 - category with CRUD operations.
-- books with CRUD operations.
+- books with CRUD operations. ✅
 - authors with CRUD operations.
 - publishers with CRUD operations.
 - users with CRUD operations.
