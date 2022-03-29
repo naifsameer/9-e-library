@@ -48,6 +48,10 @@
 
 
   <?php include 'pages/users.js' ?>
+  <?php include 'pages/add-user.js' ?>
+  <?php include 'pages/edit-user.js' ?>
+
+
   <?php include 'pages/cities.js' ?>
   <?php include 'pages/offers.js' ?>
   <?php include 'pages/orders.js' ?>
@@ -177,6 +181,17 @@
       name: "Users",
       component: VUsers
     },
+    {
+      path: '/users/add',
+      name: "AddUser",
+      component: VAddUser
+    },
+    {
+      path: '/users/edit',
+      name: "EdiUser",
+      component: VEditUser
+    },
+
     {
       path: '/cities',
       name: "Cities",
