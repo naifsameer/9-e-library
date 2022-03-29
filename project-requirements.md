@@ -7,7 +7,7 @@
 - authors with CRUD operations.✅
 - publishers with CRUD operations. ✅
 - users with CRUD operations. ✅
-- cities with CRUD operations.
+- cities with CRUD operations. ✅
 - offers with CRUD operations.
 - orders with CRUD operations.
 - user payment with CRUD operations.
