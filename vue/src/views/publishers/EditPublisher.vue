@@ -28,12 +28,12 @@ let onSubmit = () => {
   </div>
 
   <form ref="editFormRef" @submit.prevent="onSubmit" class="space-y-4">
-    <Input name="name" label="name"></Input>
-    <Input name="email" type="email" label="email"></Input>
-    <Input name="alt-phone" label="alt-phone"></Input>
-    <Input name="fax" label="fax"></Input>
-    <Input name="address" label="address"></Input>
-    <Input name="country" label="country"></Input>
+    <Input name="name" label="name" />
+    <Input name="email" type="email" label="email" />
+    <Input name="alt-phone" label="alt-phone" />
+    <Input name="fax" label="fax" />
+    <Input name="address" label="address" />
+    <Input name="country" label="country" />
 
     <InputFile name="image" label="image"></InputFile>
 

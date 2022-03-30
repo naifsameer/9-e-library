@@ -28,8 +28,8 @@ let onSubmit = () => {
 
   <form ref="addFormRef" @submit.prevent="onSubmit" class="space-y-4">
     <input type="hidden" name="id" />
-    <Input name="user-payment_id" label="user"></Input>
-    <Input name="payment_id" label="payment"></Input>
+    <Input name="user-payment_id" label="user" />
+    <Input name="payment_id" label="payment" />
 
     <div
       class="flex py-2 rounded-b border-t border-gray-200 dark:border-gray-600"

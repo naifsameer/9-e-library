@@ -28,9 +28,9 @@ let onSubmit = () => {
   </div>
 
   <form ref="addFormRef" @submit.prevent="onSubmit" class="space-y-4">
-    <Input name="name" label="name"></Input>
-    <Input name="email" type="email" label="email"></Input>
-    <Input name="password" type="password" label="password"></Input>
+    <Input name="name" label="name" />
+    <Input name="email" type="email" label="email" />
+    <Input name="password" type="password" label="password" />
 
     <Select name="role_id" label="role" :options="[{ admin: 1 }]"></Select>
     <div

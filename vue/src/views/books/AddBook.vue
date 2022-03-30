@@ -30,15 +30,15 @@ let onSubmit = () => {
   </div>
 
   <form ref="addFormRef" @submit.prevent="onSubmit" class="space-y-4">
-    <Input name="title" label="title"></Input>
+    <Input name="title" label="title" />
 
-    <Input name="price" type="number" label="price"></Input>
+    <Input name="price" type="number" label="price" />
 
-    <Input name="pages_number" type="number" label="pages number"></Input>
+    <Input name="pages_number" type="number" label="pages number" />
 
-    <Input name="quantity" type="number" label="Quantity"></Input>
+    <Input name="quantity" type="number" label="Quantity" />
 
-    <Input name="format" label="Format"></Input>
+    <Input name="format" label="Format" />
 
     <!-- publishers -->
     <Select

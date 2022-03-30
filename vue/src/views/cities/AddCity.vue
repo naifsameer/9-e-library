@@ -27,7 +27,7 @@ let onSubmit = () => {
   </div>
 
   <form ref="addFormRef" @submit.prevent="onSubmit" class="space-y-4">
-    <Input name="name" label="name"></Input>
+    <Input name="name" label="name" />
 
     <div
       class="flex py-2 rounded-b border-t border-gray-200 dark:border-gray-600"

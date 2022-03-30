@@ -30,9 +30,9 @@ let onSubmit = () => {
   <form ref="editFormRef" @submit.prevent="onSubmit" class="space-y-4">
     <input type="hidden" name="id" />
 
-    <Input name="name" label="name"></Input>
-    <Input name="email" type="email" label="email"></Input>
-    <Input name="phone" type="number" label="price"></Input>
+    <Input name="name" label="name" />
+    <Input name="email" type="email" label="email" />
+    <Input name="phone" type="number" label="price" />
     <Textarea name="bio" label="Author bio"></Textarea>
 
     <div
