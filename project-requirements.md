@@ -1,5 +1,15 @@
 # Project requirements
 
+## 1.5.0
+
+### MVC NO.6
+
+- get home page data from db
+
+## 1.4.0
+
+### MVC NO.5
+
 ## 1.3.0
 
 ### MVC NO.4
