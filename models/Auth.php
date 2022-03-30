@@ -15,13 +15,15 @@ use app\helpers\UtilHelper;
  */
 class Auth extends Model
 {
+  public static $table_name = 'users';
+
   public static function login($email, $password)
   {
-    $user_data  = self::table('users')
+    $user_data  = self::table()
       ->select("email", "usersID", "password")
       ->where('email', $email)
       ->and('password', $password)
-      ->get();
+      ->one();
 
     if ($user_data) {
       SessionHelper::setSession(SessionHelper::$AUTH, true);
