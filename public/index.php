@@ -4,7 +4,7 @@ use app\config\Router;
 
 use app\controllers\AuthController;
 use app\controllers\DashboardController;
-use app\controllers\HomeController;
+use app\controllers\PageController;
 use app\controllers\ProductDetailsController;
 use app\controllers\ShoppingCartController;
 use app\controllers\CategoryController;
@@ -12,15 +12,11 @@ use app\controllers\CheckoutController;
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
-Router::get('/', [HomeController::class, 'index']);
-
-Router::get('/categories', [CategoryController::class, 'index']);
-
-Router::get('/details', [ProductDetailsController::class, 'index']);
-
-Router::get('/shopping-cart', [ShoppingCartController::class, 'index']);
-
-Router::get('/checkout', [CheckoutController::class, 'index']);
+Router::get('/', [PageController::class, 'index']);
+Router::get('/categories', [PageController::class, 'categories']);
+Router::get('/checkout', [PageController::class, 'checkout']);
+Router::get('/details', [PageController::class, 'productDetails']);
+Router::get('/shopping-cart', [PageController::class, 'shoppingCart']);
 
 // Auth router
 Router::get('/login', [AuthController::class, 'login']);
