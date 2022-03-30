@@ -2,7 +2,7 @@
 
 use app\config\Database;
 
-require __DIR__ . ('/../Database.php');
+require __DIR__ . ('/Database.php');
 
 
 $db = Database::getInstance();
