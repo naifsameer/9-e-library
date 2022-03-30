@@ -3,16 +3,19 @@ import { RouterLink } from 'vue-router';
 import { ref } from 'vue';
 
 import Modal from '@/components/Modal.vue';
-import TableImage from '@/components/table/TableImage.vue';
+import TableRow from '@/components/table/TableRow.vue';
 
 let isDeleteModalOpen = ref(false);
-let book_id = ref();
+let userAddressID = ref();
 </script>
 
 <template>
   <div class="flex justify-between items-center">
-    <h2 class="text-2xl mb-6">Books</h2>
-    <RouterLink to="/books/add/" class="mx-4 bg-blue-500 px-4 py-2 rounded">
+    <h2 class="text-2xl mb-6">user addresses</h2>
+    <RouterLink
+      to="/user-addresses/add/"
+      class="mx-4 bg-blue-500 px-4 py-2 rounded"
+    >
       Add
     </RouterLink>
   </div>
@@ -20,11 +23,11 @@ let book_id = ref();
   <!-- Delete modal -->
   <Modal :show="isDeleteModalOpen" :onClose="() => (isDeleteModalOpen = false)">
     <h4 class="text-2xl mb-6 capitalize">
-      Are you sure you want to delete this book
+      Are you sure you want to delete this user
     </h4>
 
     <form @submit.prevent="">
-      <input type="hidden" :value="book_id" name="book_id" />
+      <input type="hidden" :value="userAddressID" name="id" />
 
       <div
         class="flex items-center py-2 space-x-2 rounded-b border-t border-gray-200 dark:border-gray-600"
@@ -53,65 +56,49 @@ let book_id = ref();
       <thead
         class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400"
       >
-        <tr>
+        <tr class="capitalize">
           <th scope="col" class="px-6 py-3">id</th>
-          <th scope="col" class="px-6 py-3">Title</th>
-          <th scope="col" class="px-6 py-3">image</th>
-          <th scope="col" class="px-6 py-3">Price</th>
-          <th scope="col" class="px-6 py-3">description</th>
-          <th scope="col" class="px-6 py-3">pages_number</th>
-          <th scope="col" class="px-6 py-3">category</th>
-          <th scope="col" class="px-6 py-3">author</th>
-          <th scope="col" class="px-6 py-3">author</th>
-          <th scope="col" class="px-6 py-3">publisher</th>
-          <th scope="col" class="px-6 py-3">quantity</th>
-          <th scope="col" class="px-6 py-3">format</th>
+          <th scope="col" class="px-6 py-3">user</th>
+          <th scope="col" class="px-6 py-3">city</th>
+          <th scope="col" class="px-6 py-3">address</th>
+          <th scope="col" class="px-6 py-3">phone</th>
+          <th scope="col" class="px-6 py-3">status</th>
+          <th scope="col" class="px-6 py-3">lat</th>
+          <th scope="col" class="px-6 py-3">lng</th>
+
           <th scope="col" class="px-6 py-3">
             <span class="sr-only">Action</span>
           </th>
         </tr>
       </thead>
       <tbody>
-        <tr class="bg-white border-b dark:bg-gray-800/50">
-          <th
-            scope="row"
-            class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap"
-          >
-            Microsoft Surface Pro
-          </th>
-          <td class="px-6 py-4">White</td>
-          <td class="px-6 py-4">White</td>
-          <td class="px-6 py-4">White</td>
-          <td class="px-6 py-4">White</td>
-          <td class="px-6 py-4">White</td>
-          <td class="px-6 py-4">White</td>
-          <td class="px-6 py-4">White</td>
-          <td class="px-6 py-4">White</td>
-          <td class="px-6 py-4">White</td>
-          <td class="px-6 py-4">White</td>
-          <td class="px-6 py-4">
-            <TableImage
-              src="http://localhost:8000/images/1234.jpg"
-            ></TableImage>
-          </td>
+        <TableRow>
+          <th scope="col" class="px-6 py-3">1</th>
+          <th scope="col" class="px-6 py-3">ali</th>
+          <th scope="col" class="px-6 py-3">yemen</th>
+          <th scope="col" class="px-6 py-3">bab al Yemen</th>
+          <th scope="col" class="px-6 py-3">phone</th>
+          <th scope="col" class="px-6 py-3">status</th>
+          <th scope="col" class="px-6 py-3">lat</th>
+          <th scope="col" class="px-6 py-3">lng</th>
+
           <td class="px-6 py-4 text-right">
             <div class="flex">
-              <RouterLink
-                name="edit-book"
-                to="/books/edit"
+              <router-link
+                to="/user-addresses/edit"
                 class="transition-colors duration-200 py-2 px-4 rounded hover:bg-blue-600 hover:text-gray-200"
               >
                 Edit
-              </RouterLink>
+              </router-link>
               <button
-                @click="() => (isDeleteModalOpen = true)"
+                @click="isDeleteModalOpen = true"
                 class="transition-colors duration-200 py-2 px-4 rounded hover:bg-red-600 hover:text-gray-200"
               >
                 Delete
               </button>
             </div>
           </td>
-        </tr>
+        </TableRow>
       </tbody>
     </table>
   </div>

@@ -2,15 +2,12 @@
 import { axios } from 'axios';
 
 import Input from '@/components/form/Input.vue';
-import Select from '@/components/form/Select.vue';
-import InputFile from '@/components/form/InputFile.vue';
-import Textarea from '@/components/form/Textarea.vue';
 import Button from '@/components/form/Button.vue';
 
 let onSubmit = () => {
   let formData = new FormData(this.$refs.editFormRef);
   axios
-    .post('/books/edit', formData, {
+    .post('/user-addresses/edit', formData, {
       headers: {
         'Content-Type': 'multipart/form-data',
       },
@@ -26,49 +23,23 @@ let onSubmit = () => {
     <button class="border rounded px-4 py-2 mb-5" @click="$router.go(-1)">
       Back
     </button>
-    <h4 class="text-2xl mb-6 capitalize">Edit book info</h4>
+    <h4 class="text-2xl mb-6 capitalize">edit user address</h4>
   </div>
 
   <form ref="editFormRef" @submit.prevent="onSubmit" class="space-y-4">
-    <Input name="title" label="title" />
+    <input type="hidden" name="id" />
+    <Input name="user_id" label="user" />
+    <Input name="city" label="city" />
+    <Input name="address" label="address" />
 
-    <Input name="price" type="number" label="price" />
-
-    <Input name="pages_number" type="number" label="pages number" />
-
-    <Input name="quantity" type="number" label="Quantity" />
-
-    <Input name="format" label="Format" />
-
-    <!-- publishers -->
-    <Select
-      label="Publisher"
-      name="publisher_id"
-      :options="[{ ls: '2' }, { ys: '1' }]"
-    ></Select>
-
-    <!-- authors -->
-    <Select
-      label="Author"
-      name="author_id"
-      :options="[{ Naif: '2' }, { Ali: '1' }]"
-    ></Select>
-
-    <!-- categories -->
-    <Select
-      label="Category"
-      name="category_id"
-      :options="[{ cate1: '2' }, { cate2: '1' }]"
-    ></Select>
-
-    <InputFile name="image" label="image"></InputFile>
-
-    <Textarea name="description" label="Book description"></Textarea>
+    <Input name="phone" type="number" label="phone" />
+    <Input name="map_lat" type="number" label="map_lat" />
+    <Input name="map_lng" type="number" label="map_lng" />
 
     <div
       class="flex py-2 rounded-b border-t border-gray-200 dark:border-gray-600"
     >
-      <Button type="submit"> Add </Button>
+      <Button type="submit"> edit </Button>
     </div>
   </form>
 </template>

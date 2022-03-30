@@ -22,8 +22,8 @@
 - cities with CRUD operations. ✅
 - user payment with CRUD operations. ✅
 - offers with CRUD operations. ✅
-- orders with CRUD operations.
-- user addresses with CRUD operations.
+- orders with CRUD operations. ✅
+- user addresses with CRUD operations.✅
 
 ## 1.2.0
 
