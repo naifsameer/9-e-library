@@ -4,7 +4,7 @@
 
 ### MVC NO.6
 
-- get home page data from db
+- get home page data from db ✅
 
 ## 1.4.0
 
