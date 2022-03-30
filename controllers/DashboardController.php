@@ -20,7 +20,8 @@ class DashboardController
     SessionHelper::setSession(SessionHelper::$AUTH, true);
 
     if (SessionHelper::getSession(SessionHelper::$AUTH)) {
-      Router::render('dashboard/index');
+      // Router::render('dashboard/index');
+      Router::vue();
     } else {
       Router::redirect("/login");
     }

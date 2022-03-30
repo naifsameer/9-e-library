@@ -1,0 +1,1 @@
+import{o as e,b as r}from"./vendor.821cadc6.js";const s=["src"],n={props:{src:String},setup(c){return(t,o)=>(e(),r("img",{class:"w-16 h-16 object-cover",src:c.src,alt:"item image"},null,8,s))}};export{n as _};

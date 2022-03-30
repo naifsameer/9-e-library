@@ -63,6 +63,12 @@ class Router
         include __DIR__ . "/../views/$view.php";
     }
 
+    public static function vue()
+    {
+        // render the view 
+        include __DIR__ . "/../views/dashboard/index.html";
+    }
+
     public static function redirect(string $redirect_url)
     {
         header("Location: $redirect_url");

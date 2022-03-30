@@ -584,6 +584,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   left: 0px;
 }
 
+.right-4 {
+  right: 1rem;
+}
+
 .z-10 {
   z-index: 10;
 }
@@ -736,6 +740,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .h-16 {
   height: 4rem;
+}
+
+.h-1 {
+  height: 0.25rem;
+}
+
+.min-h-screen {
+  min-height: 100vh;
 }
 
 .w-full {
@@ -1157,20 +1169,20 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-right: 0.5rem;
 }
 
-.pt-0 {
-  padding-top: 0px;
-}
-
-.pb-2 {
-  padding-bottom: 0.5rem;
-}
-
 .pl-3 {
   padding-left: 0.75rem;
 }
 
 .pl-10 {
   padding-left: 2.5rem;
+}
+
+.pt-0 {
+  padding-top: 0px;
+}
+
+.pb-2 {
+  padding-bottom: 0.5rem;
 }
 
 .pt-2 {
@@ -1410,6 +1422,34 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .ease-in {
   transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+}
+
+.input-date::-webkit-calendar-picker-indicator {
+  background: transparent;
+  bottom: 0;
+  opacity: 0;
+  color: transparent;
+  cursor: pointer;
+  height: auto;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: auto;
+}
+
+.input-date::-webkit-calendar-picker {
+  background: transparent;
+  bottom: 0;
+  opacity: 0;
+  color: transparent;
+  cursor: pointer;
+  height: auto;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: auto;
 }
 
 .focus-within\:text-gray-500:focus-within {
@@ -1762,6 +1802,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .sm\:rounded-lg {
     border-radius: 0.5rem;
+  }
+
+  .sm\:text-sm {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
   }
 }
 

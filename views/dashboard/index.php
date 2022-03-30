@@ -1,7 +1,7 @@
 <div id="app">
-  <div class="flex justify-between" :class="dark ? 'dark' : ''">
+  <div class="flex justify-between min-h-screen" :class="dark ? 'dark' : ''">
     <!-- dashboard nav -->
-    <aside id="sidebar" class="w-1/5 items-stretch max-w-64 relative">
+    <aside id="sidebar" class="w-1/5 items-stretch flex max-w-64 relative dark:bg-gray-800 dark:text-gray-300 dark:border-gray-700 border-r">
       <?php include 'components/sidebar.html'; ?>
     </aside>
 
