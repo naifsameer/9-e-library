@@ -39,7 +39,7 @@ trait where
  */
 trait runQuery
 {
-  public function get()
+  public function one()
   {
     $statement = $this->conn->prepare($this->db_query);
     $statement->execute();
@@ -49,7 +49,7 @@ trait runQuery
     return $statement->fetch();
   }
 
-  public function getAll()
+  public function all()
   {
     $statement = $this->conn->prepare($this->db_query);
     $statement->execute();
