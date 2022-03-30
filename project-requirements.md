@@ -2,6 +2,8 @@
 
 ## 1.3.0
 
+### MVC NO.4
+
 - category with CRUD operations. ✅
 - books with CRUD operations. ✅
 - authors with CRUD operations.✅
@@ -10,7 +12,7 @@
 - cities with CRUD operations. ✅
 - offers with CRUD operations.
 - orders with CRUD operations.
-- user payment with CRUD operations.
+- user payment with CRUD operations. ✅
 - user addresses with CRUD operations.
 
 ## 1.2.0
