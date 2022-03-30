@@ -5,7 +5,6 @@ use app\config\Database;
 require __DIR__ . ('/Database.php');
 
 
-Database::$database_name = 'naif';
 $db = Database::getInstance();
 
 
