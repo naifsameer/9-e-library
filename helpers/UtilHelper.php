@@ -33,7 +33,7 @@ class UtilHelper
             $image = explode('.', $imageFile['name']);
             $imageExtension = end($image);
 
-            $imageName = self::randomString(14) . "." . $imageExtension;
+            $imageName = self::randomString(14) . time() . "." . $imageExtension;
             $imagePath =  __DIR__ . '/../public/images/' . $imageName;
 
             move_uploaded_file($imageFile['tmp_name'], $imagePath);
