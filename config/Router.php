@@ -2,6 +2,8 @@
 
 namespace app\config;
 
+use app\helpers\UtilHelper;
+
 /**
  *  Router
  * @package app
@@ -25,12 +27,15 @@ class Router
     {
         $url = $_SERVER['REQUEST_URI'];
 
-        // strip GET variables from URL
-        if (($pos = strpos($url, '?')) !== false) {
-            $url = substr($url, 0, $pos);
-        }
+        return parse_url($url)['path'];
+    }
 
-        return $url;
+    public static function getQuery()
+    {
+        $url = $_SERVER['REQUEST_URI'];
+        $urlQuery =  parse_url($url)['query'] ?? '';
+
+        return $urlQuery;
     }
 
     public static function resolve()
