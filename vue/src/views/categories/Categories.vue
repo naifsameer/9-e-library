@@ -1,12 +1,21 @@
 <script setup>
 import { RouterLink } from 'vue-router';
-import { ref } from 'vue';
+import { onMounted, ref } from 'vue';
+
+import { URL } from '@/main.js';
 
 import Modal from '@/components/Modal.vue';
 import TableImage from '@/components/table/TableImage.vue';
+import { getCategories } from '@/api/categories.js';
+import TableRow from '@/components/table/TableRow.vue';
 
 let isDeleteModalOpen = ref(false);
 let category_id = ref();
+let categories = ref([]);
+
+onMounted(async () => {
+  categories.value = await getCategories();
+});
 </script>
 
 <template>
@@ -66,34 +75,44 @@ let category_id = ref();
           </th>
         </tr>
       </thead>
+
       <tbody>
-        <tr class="bg-white border-b dark:bg-gray-800/50">
-          <td class="px-6 py-4">1</td>
-          <td class="px-6 py-4">Web</td>
+        <TableRow v-for="category in categories" :key="category.id">
+          <td class="px-6 py-4">{{ category.id }}</td>
+
+          <td class="px-6 py-4">{{ category.name }}</td>
+
           <td class="px-6 py-4">
-            <TableImage
-              src="http://localhost:8000/images/1234.jpg"
-            ></TableImage>
+            <TableImage :src="`${URL}/images/${category.image}`" />
           </td>
-          <td class="px-6 py-4">Active</td>
+
+          <td class="px-6 py-4 capitalize">
+            {{ category.is_active === 1 ? 'Active' : 'PENDING' }}
+          </td>
+
           <td class="px-6 py-4 text-right">
             <div class="flex">
               <RouterLink
                 name="edit-category"
-                to="/categories/edit"
+                :to="'/categories/edit?id=' + category.id"
                 class="transition-colors duration-200 py-2 px-4 rounded hover:bg-blue-600 hover:text-gray-200"
               >
                 Edit
               </RouterLink>
               <button
-                @click="() => (isDeleteModalOpen = true)"
+                @click="
+                  () => {
+                    isDeleteModalOpen = true;
+                    category_id = category.id;
+                  }
+                "
                 class="transition-colors duration-200 py-2 px-4 rounded hover:bg-red-600 hover:text-gray-200"
               >
                 Delete
               </button>
             </div>
           </td>
-        </tr>
+        </TableRow>
       </tbody>
     </table>
   </div>
