@@ -16,12 +16,15 @@ class Model extends Database
   {
     return Database::getInstance()->setTable(static::$table_name);
     // return Database::getInstance()->setTable($table_name);
+
   }
+
 
   public static function getAll()
   {
     $result  = self::table()
       ->select()
+      ->where('is_active', 1)
       ->all();
 
     return $result;
@@ -37,5 +40,8 @@ class Model extends Database
     return $result;
   }
 
-  
+  public static function add($data)
+  {
+    return self::table()->insert($data)->run();
+  }
 }

@@ -1,21 +1,18 @@
 <script setup>
-import { axios } from 'axios';
-
 import Input from '@/components/form/Input.vue';
 import InputFile from '@/components/form/InputFile.vue';
 import Button from '@/components/form/Button.vue';
+import { addCategory } from '@/api/categories';
+import { ref } from 'vue';
 
-let onSubmit = () => {
-  let formData = new FormData(this.$refs.addFormRef);
-  axios
-    .post('/categories/add', formData, {
-      headers: {
-        'Content-Type': 'multipart/form-data',
-      },
-    })
-    .then((res) => {
-      console.log(res);
-    });
+let addFormRef = ref(null);
+
+let onSubmit = async () => {
+  let formData = new FormData(addFormRef.value);
+
+  let res = await addCategory(formData);
+
+  console.log(res);
 };
 </script>
 

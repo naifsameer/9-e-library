@@ -9,7 +9,11 @@ export const getCategories = async () => {
 };
 
 export const addCategory = async (data) => {
-  let res = await axios.post('/categories/add', data);
+  let res = await axios.post('/categories/add', data, {
+    headers: {
+      'Content-Type': 'multipart/form-data',
+    },
+  });
 
   return res.data;
 };

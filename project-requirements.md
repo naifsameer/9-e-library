@@ -10,6 +10,15 @@
 
 ### MVC NO.5
 
+- create v-1.4/category_Dashboard **insert operation** ✅
+- create v-1.4/books_Dashboard **insert operation**
+- create v-1.4/authors_Dashboard **insert operation**
+- create v-1.4/publishers_Dashboard **insert operation**
+- create v-1.4/branch_Dashboard **insert operation**
+- create v-1.4/cities_Dashboard **insert operation**
+- create v-1.4/offers_Dashboard **insert operation**
+- create v-1.4/user_payment_methods_Dashboard **insert operation**
+
 ## 1.3.0
 
 ### MVC NO.4
