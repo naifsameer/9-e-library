@@ -10,10 +10,10 @@ class ValidateHelper
   private static array $validation_errors = [];
 
   /** validate
-   * @param array request [$key => $value]
-   * @param array roles [$key => $value]
+   * @param array $request [$key => $value]
+   * @param array $roles [$key => $value]
    * @return true|array true if validation successfully or error list
-   * @example => validate(["name" => "required|min:30"])
+   * @example => validate(["name" => "Naif"], [ "name" => "required|min:30"])
    */
   public static function validate(array $request, array $roles)
   {
