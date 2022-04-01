@@ -15,8 +15,6 @@ class Model extends Database
   public static function table()
   {
     return Database::getInstance()->setTable(static::$table_name);
-    // return Database::getInstance()->setTable($table_name);
-
   }
 
 

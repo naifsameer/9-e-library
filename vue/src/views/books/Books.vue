@@ -1,12 +1,21 @@
 <script setup>
 import { RouterLink } from 'vue-router';
-import { ref } from 'vue';
+import { onMounted, ref } from 'vue';
+
+import { URL } from '@/main.js';
 
 import Modal from '@/components/Modal.vue';
 import TableImage from '@/components/table/TableImage.vue';
+import { getBooks } from '@/api/books';
+import TableRow from '@/components/table/TableRow.vue';
 
 let isDeleteModalOpen = ref(false);
 let book_id = ref();
+let books = ref([]);
+
+onMounted(async () => {
+  books.value = await getBooks();
+});
 </script>
 
 <template>
@@ -62,7 +71,6 @@ let book_id = ref();
           <th scope="col" class="px-6 py-3">pages_number</th>
           <th scope="col" class="px-6 py-3">category</th>
           <th scope="col" class="px-6 py-3">author</th>
-          <th scope="col" class="px-6 py-3">author</th>
           <th scope="col" class="px-6 py-3">publisher</th>
           <th scope="col" class="px-6 py-3">quantity</th>
           <th scope="col" class="px-6 py-3">format</th>
@@ -72,46 +80,43 @@ let book_id = ref();
         </tr>
       </thead>
       <tbody>
-        <tr class="bg-white border-b dark:bg-gray-800/50">
-          <th
-            scope="row"
-            class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap"
-          >
-            Microsoft Surface Pro
-          </th>
-          <td class="px-6 py-4">White</td>
-          <td class="px-6 py-4">White</td>
-          <td class="px-6 py-4">White</td>
-          <td class="px-6 py-4">White</td>
-          <td class="px-6 py-4">White</td>
-          <td class="px-6 py-4">White</td>
-          <td class="px-6 py-4">White</td>
-          <td class="px-6 py-4">White</td>
-          <td class="px-6 py-4">White</td>
-          <td class="px-6 py-4">White</td>
+        <TableRow v-for="book in books" :key="book.id">
+          <td class="px-6 py-4">{{ book.id }}</td>
+          <td class="px-6 py-4">{{ book.title }}</td>
           <td class="px-6 py-4">
-            <TableImage
-              src="http://localhost:8000/images/1234.jpg"
-            ></TableImage>
+            <TableImage :src="`${URL}/images/${book.image}`" />
           </td>
+          <td class="px-6 py-4">{{ book.price }}</td>
+          <td class="px-6 py-4">{{ book.description }}</td>
+          <td class="px-6 py-4">{{ book.pages_number }}</td>
+          <td class="px-6 py-4">{{ book.category }}</td>
+          <td class="px-6 py-4">{{ book.author }}</td>
+          <td class="px-6 py-4">{{ book.publisher }}</td>
+          <td class="px-6 py-4">{{ book.quantity }}</td>
+          <td class="px-6 py-4">{{ book.format }}</td>
+
           <td class="px-6 py-4 text-right">
             <div class="flex">
               <RouterLink
-                name="edit-book"
-                to="/books/edit"
+                :to="'/books/edit?id=' + book.id"
                 class="transition-colors duration-200 py-2 px-4 rounded hover:bg-blue-600 hover:text-gray-200"
               >
                 Edit
               </RouterLink>
               <button
-                @click="() => (isDeleteModalOpen = true)"
+                @click="
+                  () => {
+                    isDeleteModalOpen = true;
+                    book_id = book.id;
+                  }
+                "
                 class="transition-colors duration-200 py-2 px-4 rounded hover:bg-red-600 hover:text-gray-200"
               >
                 Delete
               </button>
             </div>
           </td>
-        </tr>
+        </TableRow>
       </tbody>
     </table>
   </div>

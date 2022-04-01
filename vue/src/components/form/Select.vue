@@ -11,9 +11,9 @@
     >
       <option disabled selected>{{ label }}</option>
 
-      <template v-for="option in options" :key="option">
-        <option :value="key" v-for="(key, value) in option" :key="key">
-          {{ value }}
+      <template v-for="option in options" :key="option.id">
+        <option :value="option.id">
+          {{ option.name }}
         </option>
       </template>
     </select>
