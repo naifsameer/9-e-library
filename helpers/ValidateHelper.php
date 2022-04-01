@@ -9,6 +9,48 @@ class ValidateHelper
    */
   private static array $validation_errors = [];
 
+  /** validateAll
+   * @param array $request [$key => $value]
+   * @param string $pattern
+   * @return true|array true if validation successfully or error list
+   * @example => validateAll(["name" => "Naif"], "required|min:30")
+   */
+  public static function validateAll(array $request, string $pattern)
+  {
+    $patterns =  explode("|", $pattern);
+
+    foreach (array_keys($request) as $key) {
+      // required checking
+      if (in_array('required', $patterns)) {
+        self::required($request, $key);
+      }
+
+      // required checking
+      if (in_array('email', $patterns)) {
+        self::email($request, $key);
+      }
+
+
+      // min and max checking
+      foreach ($patterns as $pattern_key) {
+
+        // min value checking
+        if (str_contains($pattern_key, 'min')) {
+          $amountSeparator = explode(":", $pattern_key);
+          self::min($request, $key, end($amountSeparator));
+        }
+
+        // max value checking
+        if (str_contains($pattern_key, 'max')) {
+          $amountSeparator = explode(":", $pattern_key);
+          self::max($request, $key, end($amountSeparator));
+        }
+      }
+    }
+
+    return empty(self::$validation_errors)  ? true :   self::$validation_errors;
+  }
+
   /** validate
    * @param array $request [$key => $value]
    * @param array $roles [$key => $value]
