@@ -78,6 +78,21 @@ trait join
   /** 
    * @param array $table_list [$key, $value]
    */
+  public function join(string $table_name, array $table_list)
+  {
+    if (count($table_list) !== 2) {
+      throw new \Exception('table list must be two items');
+    }
+
+    $select_tables = "{$table_list[0]} = {$table_list[1]}";
+
+    $this->db_query .= " JOIN `{$table_name}` ON " . $select_tables;
+    return $this;
+  }
+
+  /** 
+   * @param array $table_list [$key, $value]
+   */
   public function innerJoin(string $table_name, array $table_list)
   {
     if (count($table_list) !== 2) {
