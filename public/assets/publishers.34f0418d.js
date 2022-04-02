@@ -1,0 +1,1 @@
+import{a as s}from"./axios.9437251c.js";const r=async()=>(await s.get("/publishers")).data,i=async a=>(await s.post("/publishers/add",a,{headers:{"Content-Type":"multipart/form-data"}})).data;export{i as a,r as g};

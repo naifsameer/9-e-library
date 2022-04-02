@@ -1,0 +1,1 @@
+import{a as e}from"./index.c4069385.js";const t="";var a;let o=(a=localStorage.getItem("lang"))!=null?a:"ar";e.defaults.headers.local=o;var r=e.create({baseURL:`${t}/api`,headers:{"Content-Type":"application/json; charset=UTF-8"}});export{r as a};

@@ -1,0 +1,1 @@
+import{a as t}from"./axios.9437251c.js";const e=async()=>(await t.get("/books")).data,r=async a=>(await t.get("/books/show?id="+a)).data,n=async a=>(await t.post("/books/add",a,{headers:{"Content-Type":"multipart/form-data"}})).data;export{n as a,r as b,e as g};

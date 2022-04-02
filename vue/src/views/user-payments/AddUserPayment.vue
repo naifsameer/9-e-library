@@ -1,6 +1,4 @@
 <script setup>
-import { axios } from 'axios';
-
 import Button from '@/components/form/Button.vue';
 import Select from '@/components/form/Select.vue';
 import { onMounted, ref } from 'vue';
