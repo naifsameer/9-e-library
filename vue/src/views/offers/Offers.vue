@@ -139,7 +139,7 @@ onMounted(async () => {
           />
 
           <th scope="col" class="px-6 py-3">
-            {{ offer.all_books === 1 ? '✅' : '❌' }}
+            {{ offer.all_books === 1 ? 'true' : 'false' }}
           </th>
           <!-- <th scope="col" class="px-6 py-3">Statue</th> -->
 

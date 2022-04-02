@@ -1,12 +1,18 @@
 <script setup>
 import { RouterLink } from 'vue-router';
-import { ref } from 'vue';
+import { onMounted, ref } from 'vue';
 
 import Modal from '@/components/Modal.vue';
 import TableRow from '@/components/table/TableRow.vue';
+import { getUserPayments } from '@/api';
 
 let isDeleteModalOpen = ref(false);
-let user_id = ref();
+let userPaymentID = ref();
+
+let userPayments = ref([]);
+onMounted(async () => {
+  userPayments.value = await getUserPayments();
+});
 </script>
 
 <template>
@@ -27,7 +33,7 @@ let user_id = ref();
     </h4>
 
     <form @submit.prevent="">
-      <input type="hidden" :value="user_id" name="id" />
+      <input type="hidden" :value="userPaymentID" name="id" />
 
       <div
         class="flex items-center py-2 space-x-2 rounded-b border-t border-gray-200 dark:border-gray-600"
@@ -67,22 +73,35 @@ let user_id = ref();
         </tr>
       </thead>
       <tbody>
-        <TableRow>
-          <td class="px-6 py-4">1</td>
-          <td class="px-6 py-4">Naif</td>
-          <td class="px-6 py-4">Paypal</td>
-          <td class="px-6 py-4">Active</td>
+        <TableRow v-for="userPayment in userPayments" :key="userPayment.id">
+          <td class="px-6 py-4">
+            {{ userPayment.id }}
+          </td>
+          <td class="px-6 py-4">
+            {{ userPayment.user }}
+          </td>
+          <td class="px-6 py-4">
+            {{ userPayment.payment }}
+          </td>
+          <td class="px-6 py-4">
+            {{ userPayment.is_active }}
+          </td>
 
           <td class="px-6 py-4 text-right">
             <div class="flex">
               <router-link
-                to="/user-payments/edit"
+                :to="'/books/edit?id=' + userPayment.id"
                 class="transition-colors duration-200 py-2 px-4 rounded hover:bg-blue-600 hover:text-gray-200"
               >
                 Edit
               </router-link>
               <button
-                @click="isDeleteModalOpen = true"
+                @click="
+                  () => {
+                    isDeleteModalOpen = true;
+                    userPaymentID = userPayment.id;
+                  }
+                "
                 class="transition-colors duration-200 py-2 px-4 rounded hover:bg-red-600 hover:text-gray-200"
               >
                 Delete

@@ -12,6 +12,8 @@ use app\controllers\dashboard\BookController;
 use app\controllers\dashboard\CategoryController;
 use app\controllers\dashboard\CityController;
 use app\controllers\dashboard\OfferController;
+use app\controllers\dashboard\PaymentController;
+use app\controllers\dashboard\PaymentMethodController;
 use app\controllers\dashboard\PublisherController;
 use app\controllers\dashboard\RoleController;
 use app\controllers\dashboard\UserController;
@@ -55,6 +57,7 @@ Router::get("/api/books/show", [BookController::class, 'show']);
 Router::post("/api/books/add", [BookController::class, 'store']);
 
 
+
 // publishers
 Router::get("/api/publishers", [PublisherController::class, 'index']);
 Router::post("/api/publishers/add", [PublisherController::class, 'store']);
@@ -75,7 +78,14 @@ Router::post("/api/cities/add", [CityController::class, 'store']);
 Router::get("/api/offers", [OfferController::class, 'index']);
 Router::post("/api/offers/add", [OfferController::class, 'store']);
 
+// payments
+Router::get("/api/payments", [PaymentController::class, 'index']);
+
 // roles
 Router::get("/api/roles", [RoleController::class, 'index']);
+
+Router::get("/api/user-payment-methods", [PaymentMethodController::class, 'index']);
+Router::get("/api/user-payment-methods/show", [PaymentMethodController::class, 'show']);
+Router::post("/api/user-payment-methods/add", [PaymentMethodController::class, 'store']);
 
 Router::resolve();
