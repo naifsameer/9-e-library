@@ -1,6 +1,4 @@
 <script setup>
-import { axios } from 'axios';
-
 import Input from '@/components/form/Input.vue';
 import Button from '@/components/form/Button.vue';
 import InputFile from '@/components/form/InputFile.vue';

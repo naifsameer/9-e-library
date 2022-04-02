@@ -1,12 +1,19 @@
 <script setup>
 import { RouterLink } from 'vue-router';
-import { ref } from 'vue';
+import { onMounted, ref } from 'vue';
 
 import Modal from '@/components/Modal.vue';
 import TableRow from '@/components/table/TableRow.vue';
+import { getUsers } from '@/api/users';
 
 let isDeleteModalOpen = ref(false);
 let user_id = ref();
+
+let users = ref([]);
+
+onMounted(async () => {
+  users.value = await getUsers();
+});
 </script>
 
 <template>
@@ -57,8 +64,8 @@ let user_id = ref();
           <th scope="col" class="px-6 py-3">id</th>
           <th scope="col" class="px-6 py-3">name</th>
           <th scope="col" class="px-6 py-3">email</th>
-          <th scope="col" class="px-6 py-3">status</th>
           <th scope="col" class="px-6 py-3">role</th>
+          <!-- <th scope="col" class="px-6 py-3">status</th> -->
 
           <th scope="col" class="px-6 py-3">
             <span class="sr-only">Action</span>
@@ -66,23 +73,36 @@ let user_id = ref();
         </tr>
       </thead>
       <tbody>
-        <TableRow>
-          <td class="px-6 py-4">1</td>
-          <td class="px-6 py-4">Naif</td>
-          <td class="px-6 py-4">naif@gmail.com</td>
-          <td class="px-6 py-4">Active</td>
-          <td class="px-6 py-4">Admin</td>
+        <TableRow v-for="user in users" :key="user.id">
+          <td class="px-6 py-4">
+            {{ user.id }}
+          </td>
+          <td class="px-6 py-4">
+            {{ user.name }}
+          </td>
+          <td class="px-6 py-4">
+            {{ user.email }}
+          </td>
+          <td class="px-6 py-4">
+            {{ user.role }}
+          </td>
+          <!-- <td class="px-6 py-4">Active</td> -->
 
           <td class="px-6 py-4 text-right">
             <div class="flex">
               <router-link
-                to="/users/edit"
+                :to="'/users/edit?id=' + user.id"
                 class="transition-colors duration-200 py-2 px-4 rounded hover:bg-blue-600 hover:text-gray-200"
               >
                 Edit
               </router-link>
               <button
-                @click="isDeleteModalOpen = true"
+                @click="
+                  () => {
+                    isDeleteModalOpen = true;
+                    user_id = user.id;
+                  }
+                "
                 class="transition-colors duration-200 py-2 px-4 rounded hover:bg-red-600 hover:text-gray-200"
               >
                 Delete

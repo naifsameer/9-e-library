@@ -1,21 +1,25 @@
 <script setup>
-import { axios } from 'axios';
-
 import Input from '@/components/form/Input.vue';
 import Button from '@/components/form/Button.vue';
 import Select from '@/components/form/Select.vue';
+import { onMounted, ref } from 'vue';
 
-let onSubmit = () => {
-  let formData = new FormData(this.$refs.addFormRef);
-  axios
-    .post('/users/add', formData, {
-      headers: {
-        'Content-Type': 'multipart/form-data',
-      },
-    })
-    .then((res) => {
-      console.log(res);
-    });
+import { addUser } from '@/api/users';
+import { getRoles } from '@/api/roles';
+
+let roles = ref([]);
+
+onMounted(async () => {
+  roles.value = await getRoles();
+});
+
+let addFormRef = ref(null);
+let onSubmit = async () => {
+  let formData = new FormData(addFormRef.value);
+
+  let res = await addUser(formData);
+
+  console.log(res);
 };
 </script>
 
@@ -32,7 +36,7 @@ let onSubmit = () => {
     <Input name="email" type="email" label="email" />
     <Input name="password" type="password" label="password" />
 
-    <Select name="role_id" label="role" :options="[{ admin: 1 }]"></Select>
+    <Select name="role_id" label="role" :options="roles"></Select>
     <div
       class="flex py-2 rounded-b border-t border-gray-200 dark:border-gray-600"
     >

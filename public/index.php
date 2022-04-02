@@ -11,6 +11,8 @@ use app\controllers\PageController;
 use app\controllers\dashboard\BookController;
 use app\controllers\dashboard\CategoryController;
 use app\controllers\dashboard\PublisherController;
+use app\controllers\dashboard\RoleController;
+use app\controllers\dashboard\UserController;
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
@@ -56,5 +58,12 @@ Router::post("/api/publishers/add", [PublisherController::class, 'store']);
 // authors
 Router::get("/api/authors", [AuthorController::class, 'index']);
 Router::post("/api/authors/add", [AuthorController::class, 'store']);
+
+// users
+Router::get("/api/users", [UserController::class, 'index']);
+Router::post("/api/users/add", [UserController::class, 'store']);
+
+// roles
+Router::get("/api/roles", [RoleController::class, 'index']);
 
 Router::resolve();
