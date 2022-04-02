@@ -11,6 +11,7 @@ use app\controllers\PageController;
 use app\controllers\dashboard\BookController;
 use app\controllers\dashboard\CategoryController;
 use app\controllers\dashboard\CityController;
+use app\controllers\dashboard\OfferController;
 use app\controllers\dashboard\PublisherController;
 use app\controllers\dashboard\RoleController;
 use app\controllers\dashboard\UserController;
@@ -45,10 +46,12 @@ if ($_SERVER['REQUEST_METHOD'] == "OPTIONS") {
 
 // categories
 Router::get("/api/categories", [CategoryController::class, 'index']);
+Router::get("/api/categories/show", [CategoryController::class, 'show']);
 Router::post("/api/categories/add", [CategoryController::class, 'store']);
 
 // books
 Router::get("/api/books", [BookController::class, 'index']);
+Router::get("/api/books/show", [BookController::class, 'show']);
 Router::post("/api/books/add", [BookController::class, 'store']);
 
 
@@ -64,9 +67,13 @@ Router::post("/api/authors/add", [AuthorController::class, 'store']);
 Router::get("/api/users", [UserController::class, 'index']);
 Router::post("/api/users/add", [UserController::class, 'store']);
 
-// users
+// cities
 Router::get("/api/cities", [CityController::class, 'index']);
 Router::post("/api/cities/add", [CityController::class, 'store']);
+
+// offers
+Router::get("/api/offers", [OfferController::class, 'index']);
+Router::post("/api/offers/add", [OfferController::class, 'store']);
 
 // roles
 Router::get("/api/roles", [RoleController::class, 'index']);

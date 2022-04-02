@@ -1,21 +1,28 @@
 <script setup>
-import { axios } from 'axios';
-
 import Input from '@/components/form/Input.vue';
 import Button from '@/components/form/Button.vue';
 import InputDate from '@/components/form/InputDate.vue';
+import Select from '@/components/form/Select.vue';
+import { onMounted, ref } from 'vue';
+import { getBooks } from '@/api/books';
+import { getCategories } from '@/api/categories';
+import { addOffer } from '@/api/offer';
 
-let onSubmit = () => {
-  let formData = new FormData(this.$refs.addFormRef);
-  axios
-    .post('/offers/add', formData, {
-      headers: {
-        'Content-Type': 'multipart/form-data',
-      },
-    })
-    .then((res) => {
-      console.log(res);
-    });
+const books = ref([]);
+const categories = ref([]);
+
+onMounted(async () => {
+  books.value = await getBooks();
+  categories.value = await getCategories();
+});
+
+let addFormRef = ref(null);
+let onSubmit = async () => {
+  let formData = new FormData(addFormRef.value);
+
+  let res = await addOffer(formData);
+
+  console.log(res);
 };
 </script>
 
@@ -33,8 +40,22 @@ let onSubmit = () => {
     <InputDate name="start_date" label="start date" />
     <InputDate name="end_date" label="end date" />
 
-    <Input name="book_ids" label="book_ids" />
-    <Input name="category_ids" label="category_ids" />
+    <!-- categories -->
+    <Select
+      label="categories"
+      :options="categories"
+      name="category_ids[]"
+      multiple
+    />
+
+    <!-- books -->
+    <Select
+      option-key="title"
+      name="book_ids[]"
+      label="books"
+      :options="books"
+      multiple
+    />
     <!-- <Input name="all_books" label="all books" /> -->
 
     <div

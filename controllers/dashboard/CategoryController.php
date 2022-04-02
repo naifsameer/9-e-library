@@ -21,6 +21,19 @@ class CategoryController
     ApiHelper::sendJson($result);
   }
 
+  public static function show()
+  {
+    $category_id = $_GET['id'] ?? '';
+    $result = Category::getOneByID($category_id);
+
+    if (!$result) {
+      ApiHelper::sendJson(['error' => 'category not found']);
+      exit;
+    }
+
+    ApiHelper::sendJson($result);
+  }
+
   public static function store()
   {
     $name = $_POST['name'] ?? '';

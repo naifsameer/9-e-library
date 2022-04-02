@@ -4,8 +4,12 @@ export const getBooks = async () => {
   let res = await axios.get('/books');
 
   return res.data;
-  //   console.log(data);
-  //   return data;
+};
+
+export const getBookByID = async (id) => {
+  let res = await axios.get('/books/show?id=' + id);
+
+  return res.data;
 };
 
 export const addBook = async (data) => {

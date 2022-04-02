@@ -22,6 +22,19 @@ class BookController
     ApiHelper::sendJson($result);
   }
 
+  public static function show()
+  {
+    $book_id = $_GET['id'] ?? '';
+    $result = Book::getOneByID($book_id);
+
+    if (!$result) {
+      ApiHelper::sendJson(['error' => 'book not found']);
+      exit;
+    }
+
+    ApiHelper::sendJson($result);
+  }
+
   public static function store()
   {
     $title = $_POST['title'] ?? '';
