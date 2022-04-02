@@ -1,21 +1,18 @@
 <script setup>
-import { axios } from 'axios';
-
 import Input from '@/components/form/Input.vue';
 import Textarea from '@/components/form/Textarea.vue';
 import Button from '@/components/form/Button.vue';
+import { ref } from 'vue';
+import { addAuthor } from '@/api/authors';
 
-let onSubmit = () => {
-  let formData = new FormData(this.$refs.addFormRef);
-  axios
-    .post('/authors/add', formData, {
-      headers: {
-        'Content-Type': 'multipart/form-data',
-      },
-    })
-    .then((res) => {
-      console.log(res);
-    });
+let addFormRef = ref(null);
+
+let onSubmit = async () => {
+  let formData = new FormData(addFormRef.value);
+
+  let res = await addAuthor(formData);
+
+  console.log(res);
 };
 </script>
 
@@ -30,7 +27,7 @@ let onSubmit = () => {
   <form ref="addFormRef" @submit.prevent="onSubmit" class="space-y-4">
     <Input name="name" label="name" />
     <Input name="email" type="email" label="email" />
-    <Input name="phone" type="number" label="price" />
+    <Input name="phone" type="number" label="phone" />
     <Textarea name="bio" label="Author bio"></Textarea>
 
     <div

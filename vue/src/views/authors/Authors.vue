@@ -1,11 +1,19 @@
 <script setup>
 import { RouterLink } from 'vue-router';
-import { ref } from 'vue';
+import { onMounted, ref } from 'vue';
 
 import Modal from '@/components/Modal.vue';
+import { getAuthors } from '@/api/authors';
+import TableRow from '@/components/table/TableRow.vue';
 
 let isDeleteModalOpen = ref(false);
-let book_id = ref();
+let author_id = ref();
+
+let authors = ref([]);
+
+onMounted(async () => {
+  authors.value = await getAuthors();
+});
 </script>
 
 <template>
@@ -58,39 +66,54 @@ let book_id = ref();
           <th scope="col" class="px-6 py-3">email</th>
           <th scope="col" class="px-6 py-3">phone</th>
           <th scope="col" class="px-6 py-3">bio</th>
-          <th scope="col" class="px-6 py-3">Status</th>
+          <!-- <th scope="col" class="px-6 py-3">Status</th> -->
           <th scope="col" class="px-6 py-3">
             <span class="sr-only">Action</span>
           </th>
         </tr>
       </thead>
       <tbody>
-        <tr class="bg-white border-b dark:bg-gray-800/50">
-          <td class="px-6 py-4">1</td>
-          <td class="px-6 py-4">Naif</td>
-          <td class="px-6 py-4">naif@gmail.com</td>
-          <td class="px-6 py-4">1234</td>
-          <td class="px-6 py-4">bla bla</td>
-          <td class="px-6 py-4">Active</td>
+        <TableRow v-for="author in authors" :key="author.id">
+          <td class="px-6 py-4">
+            {{ author.id }}
+          </td>
+          <td class="px-6 py-4">
+            {{ author.name }}
+          </td>
+          <td class="px-6 py-4">
+            {{ author.email }}
+          </td>
+          <td class="px-6 py-4">
+            {{ author.phone }}
+          </td>
+          <td class="px-6 py-4">
+            {{ author.bio }}
+          </td>
+          <!-- <td class="px-6 py-4">{{ author.is_active }}</td> -->
 
           <td class="px-6 py-4 text-right">
             <div class="flex">
               <RouterLink
                 name="edit-book"
-                to="/authors/edit"
+                :to="'/authors/edit?id=' + author.id"
                 class="transition-colors duration-200 py-2 px-4 rounded hover:bg-blue-600 hover:text-gray-200"
               >
                 Edit
               </RouterLink>
               <button
-                @click="() => (isDeleteModalOpen = true)"
+                @click="
+                  () => {
+                    isDeleteModalOpen = true;
+                    author_id = author.id;
+                  }
+                "
                 class="transition-colors duration-200 py-2 px-4 rounded hover:bg-red-600 hover:text-gray-200"
               >
                 Delete
               </button>
             </div>
           </td>
-        </tr>
+        </TableRow>
       </tbody>
     </table>
   </div>

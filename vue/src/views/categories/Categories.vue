@@ -11,8 +11,8 @@ import TableRow from '@/components/table/TableRow.vue';
 
 let isDeleteModalOpen = ref(false);
 let category_id = ref();
-let categories = ref([]);
 
+let categories = ref([]);
 onMounted(async () => {
   categories.value = await getCategories();
 });

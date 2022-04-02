@@ -6,12 +6,8 @@ export const getAuthors = async () => {
   return res.data;
 };
 
-// export const addPublisher = async (data) => {
-//   let res = await axios.post('/authors/add', data, {
-//     headers: {
-//       'Content-Type': 'multipart/form-data',
-//     },
-//   });
+export const addAuthor = async (data) => {
+  let res = await axios.post('/authors/add', data);
 
-//   return res.data;
-// };
+  return res.data;
+};

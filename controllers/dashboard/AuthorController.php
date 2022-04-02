@@ -2,14 +2,9 @@
 
 namespace app\controllers\dashboard;
 
-use app\helpers\UtilHelper;
-use app\config\Router;
 use app\helpers\ApiHelper;
 use app\helpers\ValidateHelper;
 use app\models\Author;
-use app\models\Book;
-use app\models\Category;
-use app\models\Publisher;
 
 /**
  * @package app\controllers
@@ -24,62 +19,40 @@ class AuthorController
     ApiHelper::sendJson($result);
   }
 
-  // public static function store()
-  // {
-  //   $title = $_POST['title'] ?? '';
-  //   $price = $_POST['price'] ?? '';
-  //   $pages_number = $_POST['pages_number'] ?? '';
-  //   $quantity = $_POST['quantity'] ?? '';
-  //   $format = $_POST['format'] ?? '';
-  //   $publisher_id = $_POST['publisher_id'] ?? '';
-  //   $author_id = $_POST['author_id'] ?? '';
-  //   $category_id = $_POST['category_id'] ?? '';
-  //   $description = $_POST['description'] ?? '';
+  public static function store()
+  {
+    $name = $_POST['name'] ?? '';
+    $phone = $_POST['phone'] ?? '';
+    $phone = $_POST['phone'] ?? '';
+    $email = $_POST['email'] ?? '';
+    $bio = $_POST['bio'] ?? '';
 
-  //   $image = UtilHelper::uploadImage($_FILES['image']);
 
-  //   $errors = ValidateHelper::validateAll(
-  //     [
-  //       'title' => $title,
-  //       'price' => $price,
-  //       'pages_number' => $pages_number,
-  //       'quantity' => $quantity,
-  //       'format' => $format,
-  //       'publisher_id' => $publisher_id,
-  //       'author_id' => $author_id,
-  //       'category_id' => $category_id,
-  //       'description' => $description,
-  //       'image' => $image,
-  //     ],
-  //     'required'
-  //   );
+    $errors = ValidateHelper::validateAll(
+      [
+        'name' => $name,
+        'phone' => $phone,
+        'phone' => $phone,
+        'email' => $email,
+        'bio' => $bio,
+      ],
+      'required'
+    );
 
-  //   if (!is_array($errors)) {
-  //     $result = Book::add([
-  //       'title' => $title,
-  //       'price' => $price,
-  //       'pages_number' => $pages_number,
-  //       'quantity' => $quantity,
-  //       'format' => $format,
-  //       'publisher_id' => $publisher_id,
-  //       'author_id' => $author_id,
-  //       'category_id' => $category_id,
-  //       'description' => $description,
-  //       'image' => $image,
-  //     ]);
+    if (!is_array($errors)) {
+      $result = Author::add([
+        'name' => $name,
+        'phone' => $phone,
+        'phone' => $phone,
+        'email' => $email,
+        'bio' => $bio,
+      ]);
 
-  //     // remove image if the data didn't add to database
-  //     if (!$result) {
-  //       UtilHelper::removeImage($image);
-  //     }
-
-  //     ApiHelper::sendJson([
-  //       "success" => $result
-  //     ]);
-  //   } else {
-  //     $i = UtilHelper::removeImage($image);
-
-  //     ApiHelper::sendJson([$errors, $i]);
-  //   }
-  // }
+      ApiHelper::sendJson([
+        "success" => $result
+      ]);
+    } else {
+      ApiHelper::sendJson($errors);
+    }
+  }
 }
