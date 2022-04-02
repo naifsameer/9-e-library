@@ -4,18 +4,17 @@ import { axios } from 'axios';
 import Input from '@/components/form/Input.vue';
 import Button from '@/components/form/Button.vue';
 import InputFile from '@/components/form/InputFile.vue';
+import { addPublisher } from '@/api/publishers';
+import { ref } from 'vue';
 
-let onSubmit = () => {
-  let formData = new FormData(this.$refs.addFormRef);
-  axios
-    .post('/publishers/add', formData, {
-      headers: {
-        'Content-Type': 'multipart/form-data',
-      },
-    })
-    .then((res) => {
-      console.log(res);
-    });
+let addFormRef = ref(null);
+
+let onSubmit = async () => {
+  let formData = new FormData(addFormRef.value);
+
+  let res = await addPublisher(formData);
+
+  console.log(res);
 };
 </script>
 
@@ -30,7 +29,8 @@ let onSubmit = () => {
   <form ref="addFormRef" @submit.prevent="onSubmit" class="space-y-4">
     <Input name="name" label="name" />
     <Input name="email" type="email" label="email" />
-    <Input name="alt-phone" label="alt-phone" />
+    <Input name="phone" label="phone" />
+    <Input name="alt_phone" label="alt-phone" />
     <Input name="fax" label="fax" />
     <Input name="address" label="address" />
     <Input name="country" label="country" />

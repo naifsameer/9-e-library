@@ -1,11 +1,19 @@
 <script setup>
 import { RouterLink } from 'vue-router';
-import { ref } from 'vue';
+import { onMounted, ref } from 'vue';
 
 import Modal from '@/components/Modal.vue';
+import { getPublishers } from '@/api/publishers';
+import TableRow from '@/components/table/TableRow.vue';
 
 let isDeleteModalOpen = ref(false);
-let book_id = ref();
+let publisher_id = ref();
+
+let publishers = ref([]);
+
+onMounted(async () => {
+  publishers.value = await getPublishers();
+});
 </script>
 
 <template>
@@ -65,43 +73,67 @@ let book_id = ref();
           <th scope="col" class="px-6 py-3">address</th>
           <th scope="col" class="px-6 py-3">country</th>
           <th scope="col" class="px-6 py-3">image</th>
-          <th scope="col" class="px-6 py-3">Status</th>
+          <!-- <th scope="col" class="px-6 py-3">Status</th> -->
           <th scope="col" class="px-6 py-3">
             <span class="sr-only">Action</span>
           </th>
         </tr>
       </thead>
       <tbody>
-        <tr class="bg-white border-b dark:bg-gray-800/50">
-          <th scope="col" class="px-6 py-3">1</th>
-          <th scope="col" class="px-6 py-3">name</th>
-          <th scope="col" class="px-6 py-3">phone</th>
-          <th scope="col" class="px-6 py-3">alt phone</th>
-          <th scope="col" class="px-6 py-3">fax</th>
-          <th scope="col" class="px-6 py-3">email</th>
-          <th scope="col" class="px-6 py-3">address</th>
-          <th scope="col" class="px-6 py-3">country</th>
-          <th scope="col" class="px-6 py-3">image</th>
-          <th scope="col" class="px-6 py-3">Status</th>
+        <TableRow v-for="publisher in publishers" :key="publisher.id">
+          <th scope="col" class="px-6 py-3">
+            {{ publisher.id }}
+          </th>
+          <th scope="col" class="px-6 py-3">
+            {{ publisher.name }}
+          </th>
+          <th scope="col" class="px-6 py-3">
+            {{ publisher.phone }}
+          </th>
+          <th scope="col" class="px-6 py-3">
+            {{ publisher.alt_phone }}
+          </th>
+          <th scope="col" class="px-6 py-3">
+            {{ publisher.fax }}
+          </th>
+          <th scope="col" class="px-6 py-3">
+            {{ publisher.email }}
+          </th>
+          <th scope="col" class="px-6 py-3">
+            {{ publisher.address }}
+          </th>
+          <th scope="col" class="px-6 py-3">
+            {{ publisher.country }}
+          </th>
+          <th scope="col" class="px-6 py-3">
+            {{ publisher.image }}
+          </th>
+          <!-- <th scope="col" class="px-6 py-3">
+            {{ publisher.is_active }}
+          </th> -->
 
           <td class="px-6 py-4 text-right">
             <div class="flex">
               <RouterLink
-                name="edit-book"
-                to="/publishers/edit"
+                :to="'/publishers/edit?id=' + publisher.id"
                 class="transition-colors duration-200 py-2 px-4 rounded hover:bg-blue-600 hover:text-gray-200"
               >
                 Edit
               </RouterLink>
               <button
-                @click="() => (isDeleteModalOpen = true)"
+                @click="
+                  () => {
+                    isDeleteModalOpen = true;
+                    publisher_id = book.id;
+                  }
+                "
                 class="transition-colors duration-200 py-2 px-4 rounded hover:bg-red-600 hover:text-gray-200"
               >
                 Delete
               </button>
             </div>
           </td>
-        </tr>
+        </TableRow>
       </tbody>
     </table>
   </div>

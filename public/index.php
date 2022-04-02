@@ -51,6 +51,7 @@ Router::post("/api/books/add", [BookController::class, 'store']);
 
 // publishers
 Router::get("/api/publishers", [PublisherController::class, 'index']);
+Router::post("/api/publishers/add", [PublisherController::class, 'store']);
 
 // authors
 Router::get("/api/authors", [AuthorController::class, 'index']);
