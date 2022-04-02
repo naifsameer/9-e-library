@@ -1,12 +1,19 @@
 <script setup>
 import { RouterLink } from 'vue-router';
-import { ref } from 'vue';
+import { onMounted, ref } from 'vue';
 
 import Modal from '@/components/Modal.vue';
 import TableRow from '@/components/table/TableRow.vue';
 
+import { getCities } from '@/api/cities';
+
 let isDeleteModalOpen = ref(false);
 let city_id = ref();
+
+let cities = ref([]);
+onMounted(async () => {
+  cities.value = await getCities();
+});
 </script>
 
 <template>
@@ -56,7 +63,7 @@ let city_id = ref();
         <tr class="capitalize">
           <th scope="col" class="px-6 py-3">id</th>
           <th scope="col" class="px-6 py-3">name</th>
-          <th scope="col" class="px-6 py-3">status</th>
+          <!-- <th scope="col" class="px-6 py-3">status</th> -->
 
           <th scope="col" class="px-6 py-3">
             <span class="sr-only">Action</span>
@@ -64,21 +71,32 @@ let city_id = ref();
         </tr>
       </thead>
       <tbody>
-        <TableRow>
-          <td class="px-6 py-4">1</td>
-          <td class="px-6 py-4">Yemen</td>
-          <td class="px-6 py-4">Active</td>
+        <TableRow v-for="city in cities" :key="city.id">
+          <td class="px-6 py-4">
+            {{ city.id }}
+          </td>
+          <td class="px-6 py-4">
+            {{ city.name }}
+          </td>
+          <!-- <td class="px-6 py-4">
+            {{ city.is_active }}
+          </td> -->
 
           <td class="px-6 py-4 text-right">
             <div class="flex">
               <router-link
-                to="/cities/edit"
+                :to="'/cities/edit?id=' + city.id"
                 class="transition-colors duration-200 py-2 px-4 rounded hover:bg-blue-600 hover:text-gray-200"
               >
                 Edit
               </router-link>
               <button
-                @click="isDeleteModalOpen = true"
+                @click="
+                  () => {
+                    isDeleteModalOpen = true;
+                    city_id = city.id;
+                  }
+                "
                 class="transition-colors duration-200 py-2 px-4 rounded hover:bg-red-600 hover:text-gray-200"
               >
                 Delete

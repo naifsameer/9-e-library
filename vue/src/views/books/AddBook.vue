@@ -24,7 +24,6 @@ onMounted(async () => {
 });
 
 let addFormRef = ref(null);
-
 let onSubmit = async () => {
   let formData = new FormData(addFormRef.value);
 

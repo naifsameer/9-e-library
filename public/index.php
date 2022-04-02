@@ -10,6 +10,7 @@ use app\controllers\PageController;
 
 use app\controllers\dashboard\BookController;
 use app\controllers\dashboard\CategoryController;
+use app\controllers\dashboard\CityController;
 use app\controllers\dashboard\PublisherController;
 use app\controllers\dashboard\RoleController;
 use app\controllers\dashboard\UserController;
@@ -62,6 +63,10 @@ Router::post("/api/authors/add", [AuthorController::class, 'store']);
 // users
 Router::get("/api/users", [UserController::class, 'index']);
 Router::post("/api/users/add", [UserController::class, 'store']);
+
+// users
+Router::get("/api/cities", [CityController::class, 'index']);
+Router::post("/api/cities/add", [CityController::class, 'store']);
 
 // roles
 Router::get("/api/roles", [RoleController::class, 'index']);

@@ -1,20 +1,16 @@
 <script setup>
-import { axios } from 'axios';
-
 import Input from '@/components/form/Input.vue';
 import Button from '@/components/form/Button.vue';
+import { ref } from 'vue';
+import { addCity } from '@/api/cities';
 
-let onSubmit = () => {
-  let formData = new FormData(this.$refs.addFormRef);
-  axios
-    .post('/cities/add', formData, {
-      headers: {
-        'Content-Type': 'multipart/form-data',
-      },
-    })
-    .then((res) => {
-      console.log(res);
-    });
+let addFormRef = ref(null);
+let onSubmit = async () => {
+  let formData = new FormData(addFormRef.value);
+
+  let res = await addCity(formData);
+
+  console.log(res);
 };
 </script>
 
