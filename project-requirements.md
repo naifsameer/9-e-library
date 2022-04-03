@@ -5,6 +5,14 @@
 ### MVC NO.6
 
 - get home page data from db ✅
+- v-1.5/show_all_categories on page
+- v-1.5/show_all_authors on page
+- v-1.5/show_all_publishers on page
+- v-1.5/show_all_users on page
+- v-1.5/show_all_cities on page
+- v-1.5/show_all_offers on page
+- v-1.5/show_all_payment_methods on page
+-
 
 ## 1.4.0
 
