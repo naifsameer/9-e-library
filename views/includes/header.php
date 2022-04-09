@@ -45,9 +45,8 @@
           </a>
         </li>
         <li class="item">
-          <a href="">
-            <i class="fa fa-cloud-moon"></i>
-            المملكة العربية السعودية | ر.س
+          <a href="/dashboard">
+            Dashboard
           </a>
         </li>
         <li class="item">

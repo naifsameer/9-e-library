@@ -69,17 +69,21 @@ include_once 'includes/slider.php';
         <!-- books -->
         <div class="c-books">
           <div class="list">
-            <!-- item 1 -->
+            <?php if (isset($params['books'])) {
+              foreach ($params['books'] as $book) {
+            ?>
             <div class="item">
               <div class="item-img">
-                <img src="/images/books/book-3.jpg" alt="book image" />
+                <a href="/details?book_id=<?= $book['id']; ?>">
+
+                  <img src="/images/<?= $book['image'] ?>" alt="book image" />
+                </a>
               </div>
 
               <div class="item-content">
                 <h3 class="item-label">
                   <i class="fa fa-book"></i>
-
-                  كتاب الاكتروني
+                  <?= $book['format']; ?>
                 </h3>
 
                 <div class="c-rating-icons">
@@ -90,12 +94,13 @@ include_once 'includes/slider.php';
                   <i class="fa fa-star"></i>
                 </div>
 
-                <h4 class="item-title">ألرياضيات</h4>
+                <a href="/details?book_id=<?= $book['id']; ?>">
+                  <h3 class="item-title"><?= $book['title']; ?></h3>
+                </a>
 
                 <div class="c-price" dir="rtl">
-                  <span class="price-label"> 120 </span>
+                  <span class="price-label"> <?= $book['price']; ?> </span>
                   ر.س
-
                   <span class="tax"> شامل الضرائب </span>
                 </div>
 
@@ -119,6 +124,8 @@ include_once 'includes/slider.php';
                 </div>
               </div>
             </div>
+            <?php }
+            } ?>
           </div>
         </div>
 
@@ -136,14 +143,10 @@ include_once 'includes/slider.php';
 </main>
 
 
-<script src="/js/books.js"></script>
-
 <script>
-  renderBooks(9);
-
-  // get the value from the local storage
-  document.querySelector('.shopping-item-number').innerHTML =
-    localStorage.getItem('checkout-product-nubmer');
+// get the value from the local storage
+document.querySelector('.shopping-item-number').innerHTML =
+  localStorage.getItem('checkout-product-number');
 </script>
 
 

@@ -5,7 +5,7 @@
 ### MVC NO.6
 
 - get home page data from db ✅
-- v-1.5/show_all_categories on page
+- v-1.5/show_all_categories on page ✅
 - v-1.5/show_all_authors on page
 - v-1.5/show_all_publishers on page
 - v-1.5/show_all_users on page

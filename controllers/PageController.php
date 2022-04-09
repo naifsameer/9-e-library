@@ -22,7 +22,9 @@ class PageController
 
     public static function categories()
     {
-        Router::render('categories');
+        $data['books'] = Book::getAll();
+
+        Router::render('categories', $data);
     }
 
     public static function checkout()
